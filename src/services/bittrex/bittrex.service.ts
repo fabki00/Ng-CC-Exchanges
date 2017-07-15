@@ -1,11 +1,10 @@
+import { BittrexCurrencies } from './../../models/bittrex/bittrex-currencies';
+import { BittrexMarketSummaries, BittrexMarketSummary } from './../../models/bittrex/bittrex-market-summaries';
+import { BittrexMarkets } from './../../models/bittrex/bittrex-markets';
+import { BittrexResponseTicker } from './../../models/bittrex/bittrex-ticker';
+import { BittrexOrderBook } from './../../models/bittrex/bittrex-order-book';
 /* Bittrex import*/
-import { BittrexMarketSummaries, BittrexMarketSummary } from '../models/bittrex-market-summaries';
-import { BittrexTicker, BittrexResponseTicker } from '../models/bittrex-ticker';
-import { BittrexCurrencies} from '../models/bittrex-currencies';
-import { BittrexOrderBook} from '../models/bittrex-order-book';
-import { BittrexTickers } from '../models/bittrex-tickers';
-import { BittrexMarkets} from '../models/bittrex-markets';
-import { Bittrex } from '../models/bittrex';
+
 /* Angular import */
 import { Injectable } from '@angular/core';
 import { Http} from '@angular/http';
@@ -15,6 +14,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class BittrexService {
+
 constructor(private _http: Http) {}
 /* OrderBook */
     getOrderBook(market, type= 'both', depth= 50) {
