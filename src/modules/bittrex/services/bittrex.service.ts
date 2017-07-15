@@ -1,17 +1,17 @@
-import { BittrexTicker, BittrexResponseTicker } from '../models/bittrex-ticker';
-import { BittrexTickers } from '../models/bittrex-tickers';
+/* Bittrex import*/
 import { BittrexMarketSummaries, BittrexMarketSummary } from '../models/bittrex-market-summaries';
-import { Bittrex } from '../models/bittrex';
-import { BittrexMarkets} from '../models/bittrex-markets';
+import { BittrexTicker, BittrexResponseTicker } from '../models/bittrex-ticker';
 import { BittrexCurrencies} from '../models/bittrex-currencies';
 import { BittrexOrderBook} from '../models/bittrex-order-book';
+import { BittrexTickers } from '../models/bittrex-tickers';
+import { BittrexMarkets} from '../models/bittrex-markets';
+import { Bittrex } from '../models/bittrex';
+/* Angular import */
 import { Injectable } from '@angular/core';
 import { Http} from '@angular/http';
-
+/* Rxjs Import */
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class BittrexService {
