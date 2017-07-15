@@ -28,7 +28,8 @@ constructor(private _http: Http) { }
                         if (JSON.parse(jsonString)) {
                             finalPoloniexJSon.push(JSON.parse(jsonString));
                         }
-                    }catch(e) {
+                    }catch (e) {
+                        console.log('error json poloniex', jsonString);
                     }
                 }
                 return finalPoloniexJSon;
