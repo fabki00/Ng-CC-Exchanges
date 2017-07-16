@@ -4,8 +4,9 @@ import { Injectable } from '@angular/core';
 import { NovaExchangeMarkets } from './../../models/nova-exchange/nova-exchange-markets';
 
 /* Rxjs Import */
-import {Observable} from 'rxjs/Rx';
+import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/interval';
 
 @Injectable()
 export class NovaExchangeService {

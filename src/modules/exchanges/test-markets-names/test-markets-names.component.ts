@@ -61,7 +61,8 @@ export class TestMarketsNamesComponent implements OnInit {
     this.getNovaExchangeMarketsNames();
   }
   getNovaExchangeMarketsNames() {
-    this._novaExchangeService.getMarketsNames().subscribe(
+    this._novaExchangeService.getMarketsNames()
+    .subscribe(
       data => this._novaExchangeMarketsNames = data,
       error => {
          this.handleError(error);

@@ -4,8 +4,8 @@
 <hr>
 <div class="row">
     <div class="col-md-3 market-name-col">
+        <label class="label label-default">Bittrex Markets</label><br>
         <div *ngIf="_bittrexMarketsNames.length > 1">
-            <label class="label label-default">Bittrex Markets</label><br>
             <label class="label label-success">{{_bittrexMarketsNames.length}} markets listed</label>
             <div style="overflow-y: scroll; height:200px;">
                 <div *ngFor="let market of _bittrexMarketsNames">
