@@ -10,11 +10,11 @@ import 'rxjs/add/operator/map';
 export class HitbtcService {
 
 constructor(private _http: Http) { }
-  getSymbols(): Observable <HitBtcSymbols> {
+  getSymbols(): Observable<HitBtcSymbols> {
     return this._http.get('https://api.hitbtc.com/api/1/public/symbols')
                      .map(response => response.json() as HitBtcSymbols);
   }
-  getMarketsNames() {
+  getMarketsNames(): Observable<string[]> {
     return this.getSymbols()
               .map(response => {
                 const marketsNames = [];

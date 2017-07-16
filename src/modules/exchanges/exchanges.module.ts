@@ -1,3 +1,5 @@
+import { SlashToDashPipe } from './../../pipes/slash-to-dash.pipe';
+import { CryptopiaService } from './../../services/cryptopia/cryptopia.service';
 import { HitbtcService } from './../../services/hitbtc/hitbtc.service';
 import { InvertPairKeyPipe } from './../../pipes/invert-pair-key.pipe';
 import { UnderscoreToDashPipe } from './../../pipes/underscore-to-dash.pipe';
@@ -19,12 +21,19 @@ import { TestMarketsNamesComponent } from './test-markets-names/test-markets-nam
     FormsModule,
     HttpModule,
   ],
-  providers: [BittrexService, PoloniexService, YobitService, HitbtcService],
+  providers: [
+    BittrexService,
+    PoloniexService,
+    YobitService,
+    HitbtcService,
+    CryptopiaService
+  ],
   declarations: [
     ExchangesComponent,
     TestMarketsNamesComponent,
     UnderscoreToDashPipe,
-    InvertPairKeyPipe
+    InvertPairKeyPipe,
+    SlashToDashPipe
 ],
   exports: [ExchangesComponent],
   bootstrap: [ExchangesComponent]

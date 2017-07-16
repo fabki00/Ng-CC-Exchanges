@@ -36,11 +36,13 @@ constructor(private _http: Http) {}
     getMarketsNames(): Observable<string[]>  {
          return this.getMarkets()
                    .map(response => {
-                       const arr = [];
-                       response.result.forEach(element => {
-                           arr.push(element.MarketName);
+                       const marketsNames = [];
+                       if (response.success) {
+                          response.result.forEach(element => {
+                           marketsNames.push(element.MarketName);
                        });
-                        return arr;
+                        return marketsNames;
+                       }
                    });
     }
     getMarketSummaries(): Observable<BittrexMarketSummaries>  {

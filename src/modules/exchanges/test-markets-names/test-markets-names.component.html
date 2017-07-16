@@ -41,3 +41,15 @@
         </div>
     </div>
 </div>
+<hr>
+<div class="row">
+    <div class="col-md-3  market-name-col">
+        <label class="label label-default">Cryptopia Markets</label><br>
+        <label class="label label-success">{{_cryptopiaMarketsNames.length}} markets listed</label>
+        <div style="overflow-y: scroll; height:200px;">
+            <div *ngFor="let market of _cryptopiaMarketsNames">
+                {{ market | slashToDash}}
+            </div>
+        </div>
+    </div>
+</div>

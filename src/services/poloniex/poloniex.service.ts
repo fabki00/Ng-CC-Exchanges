@@ -34,9 +34,9 @@ getMarketsNames(): Observable<string[]> {
             if (pairs.hasOwnProperty(key)) {
                 const jsonString = '{"market":"' + key + '",' + JSON.stringify(pairs[key]).replace('{', '');
                 try {
-                        if (JSON.parse(jsonString)) {
-                            finalPoloniexJSon.push(JSON.parse(jsonString));
-                        }
+                      if (JSON.parse(jsonString)) {
+                          finalPoloniexJSon.push(JSON.parse(jsonString));
+                      }
                     }catch (e) {
                         console.error('error json poloniex', jsonString);
                     }
