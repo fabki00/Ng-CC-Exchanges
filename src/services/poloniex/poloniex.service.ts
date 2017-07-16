@@ -8,9 +8,14 @@ import 'rxjs/add/operator/map';
 export class PoloniexService {
 
 constructor(private _http: Http) { }
+getReturnTicker() {
+   return this._http.get('https://poloniex.com/public?command=returnTicker')
+                    .map(response => response.json());
+}
 getMarketsNames(): Observable<string[]> {
-    return this._http.get('https://poloniex.com/public?command=returnTicker').map(response => {
-        const pairs = response.json();
+    return this.getReturnTicker()
+              .map(response => {
+        const pairs = response;
         const marketsNames = [];
         for (const key in pairs) {
             if (pairs.hasOwnProperty(key)) {
@@ -21,7 +26,8 @@ getMarketsNames(): Observable<string[]> {
     });
 }
  getTicker(): Observable<PoloniexTicker[]> {
-    return this._http.get('https://poloniex.com/public?command=returnTicker').map(response => {
+    return this.getReturnTicker()
+        .map(response => {
         const pairs = response.json();
         const finalPoloniexJSon = [];
         for (const key in pairs) {

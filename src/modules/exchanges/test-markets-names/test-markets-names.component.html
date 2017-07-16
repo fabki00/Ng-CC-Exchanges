@@ -1,41 +1,43 @@
 <div class="market-name-title">
-  <h1 class="market-name-title">Markets Names</h1>
+    <h1 class="market-name-title">Markets Names</h1>
 </div>
 <hr>
 <div class="row">
-  <div class="col-md-3 market-name-col">
-    <label class="label label-default">Bittrex Markets</label><br>
-    <label class="label label-success">{{_bittrexMarketsNames.length}} markets listed</label>
-    <div style="overflow-y: scroll; height:200px;">
-      <div *ngFor="let market of _bittrexMarketsNames">
-        {{ market }}
-      </div>
+    <div class="col-md-3 market-name-col">
+        <label class="label label-default">Bittrex Markets</label><br>
+        <label class="label label-success">{{_bittrexMarketsNames.length}} markets listed</label>
+        <div style="overflow-y: scroll; height:200px;">
+            <div *ngFor="let market of _bittrexMarketsNames">
+                {{ market }}
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col-md-3 market-name-col">
-    <label class="label label-default">Poloniex Markets</label><br>
-      <label class="label label-success">{{_poloniexMarketsNames.length}} markets listed</label>
-    <div style="overflow-y: scroll; height:200px;">
-      <div *ngFor="let market of _poloniexMarketsNames">
-        {{ market | underscoreToDash}}
-      </div>
-    </div>
-
-  </div>
-  <div class="col-md-3  market-name-col">
-    <label class="label label-default">Yobit Markets</label><br>
-      <label class="label label-success">{{_yobitMarketsNames.length}} markets listed</label>
-    <div style="overflow-y: scroll; height:200px;">
-      <div *ngFor="let market of _yobitMarketsNames">
-        {{ market | underscoreToDash | uppercase | invertPairKey}}
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-     <!--
-    <div style="overflow-y: scroll; height:200px;">
+    <div class="col-md-3 market-name-col">
+        <label class="label label-default">Poloniex Markets</label><br>
+        <label class="label label-success">{{_poloniexMarketsNames.length}} markets listed</label>
+        <div style="overflow-y: scroll; height:200px;">
+            <div *ngFor="let market of _poloniexMarketsNames">
+                {{ market | underscoreToDash}}
+            </div>
+        </div>
 
     </div>
-    -->
-  </div>
+    <div class="col-md-3  market-name-col">
+        <label class="label label-default">Yobit Markets</label><br>
+        <label class="label label-success">{{_yobitMarketsNames.length}} markets listed</label>
+        <div style="overflow-y: scroll; height:200px;">
+            <div *ngFor="let market of _yobitMarketsNames">
+                {{ market | underscoreToDash | uppercase | invertPairKey}}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3  market-name-col">
+        <label class="label label-default">Hitbtc Markets</label><br>
+        <label class="label label-success">{{_hitbtcMarketsNames.length}} markets listed</label>
+        <div style="overflow-y: scroll; height:200px;">
+            <div *ngFor="let market of _hitbtcMarketsNames">
+                {{ market }}
+            </div>
+        </div>
+    </div>
 </div>

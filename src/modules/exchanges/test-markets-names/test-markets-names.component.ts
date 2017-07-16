@@ -1,3 +1,4 @@
+import { HitbtcService } from './../../../services/hitbtc/hitbtc.service';
 import { YobitService } from './../../../services/yobit/yobit.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,17 +11,26 @@ import { BittrexService } from './../../../services/bittrex/bittrex.service';
   styleUrls: ['./test-markets-names.component.css']
 })
 export class TestMarketsNamesComponent implements OnInit {
- _poloniexMarketsNames: string[] = [];
+  _poloniexMarketsNames: string[] = [];
   _bittrexMarketsNames: string[] = [];
   _yobitMarketsNames: string[] = [];
+  _hitbtcMarketsNames: string[] = [];
   constructor(private _bittrexService: BittrexService,
     private _poloniexService: PoloniexService,
-    private _yobitService: YobitService) { }
+    private _yobitService: YobitService,
+    private _hitbtcService: HitbtcService) { }
 
   ngOnInit() {
     this.getYobitMarketsNames();
     this.getBittrexMarketsNames();
     this.getPoloniexMarketsNames();
+    this.getHitbtcMarketsNames();
+  }
+  getHitbtcMarketsNames() {
+    this._hitbtcService.getMarketsNames().subscribe(
+      val => this._hitbtcMarketsNames = val,
+      error => this.handleError(error)
+    );
   }
   getYobitMarketsNames() {
     this._yobitService.getMarketsNames().subscribe(

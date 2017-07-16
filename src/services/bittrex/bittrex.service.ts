@@ -34,10 +34,10 @@ constructor(private _http: Http) {}
                     .map(response => response.json() as BittrexMarkets);
     }
     getMarketsNames(): Observable<string[]>  {
-         return this._http.get('https://bittrex.com/api/v1.1/public/getmarkets')
+         return this.getMarkets()
                    .map(response => {
                        const arr = [];
-                       response.json().result.forEach(element => {
+                       response.result.forEach(element => {
                            arr.push(element.MarketName);
                        });
                         return arr;

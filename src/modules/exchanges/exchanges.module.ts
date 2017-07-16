@@ -1,3 +1,4 @@
+import { HitbtcService } from './../../services/hitbtc/hitbtc.service';
 import { InvertPairKeyPipe } from './../../pipes/invert-pair-key.pipe';
 import { UnderscoreToDashPipe } from './../../pipes/underscore-to-dash.pipe';
 import { HttpModule } from '@angular/http';
@@ -18,7 +19,7 @@ import { TestMarketsNamesComponent } from './test-markets-names/test-markets-nam
     FormsModule,
     HttpModule,
   ],
-  providers: [BittrexService, PoloniexService, YobitService],
+  providers: [BittrexService, PoloniexService, YobitService, HitbtcService],
   declarations: [
     ExchangesComponent,
     TestMarketsNamesComponent,
