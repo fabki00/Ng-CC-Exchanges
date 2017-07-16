@@ -29,6 +29,9 @@ export class TestMarketsNamesComponent implements OnInit {
     private _ccexService: CCexService) { }
 
   ngOnInit() {
+    this.getAllExchangesMarketsNames();
+  }
+  getAllExchangesMarketsNames () {
     this.getYobitMarketsNames();
     this.getBittrexMarketsNames();
     this.getPoloniexMarketsNames();
@@ -37,44 +40,68 @@ export class TestMarketsNamesComponent implements OnInit {
     this.getCcexMarketsNames();
   }
   getCcexMarketsNames() {
+    let errorCounter = 0;
     this._ccexService.getMarketsNames().subscribe(
       data => this._ccexMarketsNames = data,
-      error => this.handleError(error),
+      error => {
+        errorCounter++;
+        errorCounter <= 5 ? this.getCcexMarketsNames() : this.handleError(error);
+      },
       () => this._appRef.tick()
     );
   }
   getCryptopiaMarketsNames() {
+    let errorCounter = 0;
     this._cryptopiaService.getMarketsNames().subscribe(
       data => this._cryptopiaMarketsNames = data,
-      error => this.handleError(error),
+      error => {
+        errorCounter++;
+        errorCounter <= 5 ? this.getCryptopiaMarketsNames() : this.handleError(error);
+      },
       () => this._appRef.tick()
     );
   }
   getHitbtcMarketsNames() {
+    let errorCounter = 0;
     this._hitbtcService.getMarketsNames().subscribe(
       data => this._hitbtcMarketsNames = data,
-      error => this.handleError(error),
+      error => {
+        errorCounter++;
+        errorCounter <= 5 ? this.getHitbtcMarketsNames() : this.handleError(error);
+      },
       () => this._appRef.tick()
     );
   }
   getYobitMarketsNames() {
+    let errorCounter = 0;
     this._yobitService.getMarketsNames().subscribe(
       data => this._yobitMarketsNames = data,
-      error => console.error(error),
+      error => {
+        errorCounter++;
+        errorCounter <= 5 ? this.getYobitMarketsNames() : this.handleError(error);
+      },
       () => this._appRef.tick()
     );
   }
   getPoloniexMarketsNames() {
+    let errorCounter = 0;
     this._poloniexService.getMarketsNames().subscribe(
       data => this._poloniexMarketsNames = data,
-      error => console.error(error),
+      error => {
+        errorCounter++;
+        errorCounter <= 5 ? this.getPoloniexMarketsNames() : this.handleError(error);
+      },
       () => this._appRef.tick()
     );
   }
   getBittrexMarketsNames() {
+    let errorCounter = 0;
     this._bittrexService.getMarketsNames().subscribe(
       data => this._bittrexMarketsNames = data,
-      error => console.error(error),
+      error => {
+        errorCounter++;
+        errorCounter <= 5 ? this.getBittrexMarketsNames() : this.handleError(error);
+      },
       () => this._appRef.tick()
     );
   }
