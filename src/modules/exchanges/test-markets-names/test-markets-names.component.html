@@ -52,4 +52,13 @@
             </div>
         </div>
     </div>
+    <div class="col-md-3  market-name-col">
+        <label class="label label-default">C-cex Markets</label><br>
+        <label class="label label-success">{{_ccexMarketsNames.length}} markets listed</label>
+        <div style="overflow-y: scroll; height:200px;">
+            <div *ngFor="let market of _ccexMarketsNames">
+                {{ market }}
+            </div>
+        </div>
+    </div>
 </div>

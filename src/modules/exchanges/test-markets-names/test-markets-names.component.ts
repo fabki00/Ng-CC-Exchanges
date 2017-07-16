@@ -1,3 +1,4 @@
+import { CCexService } from './../../../services/c-cex/c-cex.service';
 import { CryptopiaService } from './../../../services/cryptopia/cryptopia.service';
 import { HitbtcService } from './../../../services/hitbtc/hitbtc.service';
 import { YobitService } from './../../../services/yobit/yobit.service';
@@ -17,13 +18,15 @@ export class TestMarketsNamesComponent implements OnInit {
   _yobitMarketsNames: string[] = [];
   _hitbtcMarketsNames: string[] = [];
   _cryptopiaMarketsNames: string[] = [];
+  _ccexMarketsNames: string[] = [];
   constructor(
     private _appRef: ApplicationRef,
     private _bittrexService: BittrexService,
     private _poloniexService: PoloniexService,
     private _yobitService: YobitService,
     private _hitbtcService: HitbtcService,
-    private _cryptopiaService: CryptopiaService) { }
+    private _cryptopiaService: CryptopiaService,
+    private _ccexService: CCexService) { }
 
   ngOnInit() {
     this.getYobitMarketsNames();
@@ -31,6 +34,14 @@ export class TestMarketsNamesComponent implements OnInit {
     this.getPoloniexMarketsNames();
     this.getHitbtcMarketsNames();
     this.getCryptopiaMarketsNames();
+    this.getCcexMarketsNames();
+  }
+  getCcexMarketsNames() {
+    this._ccexService.getMarketsNames().subscribe(
+      data => this._ccexMarketsNames = data,
+      error => this.handleError(error),
+      () => this._appRef.tick()
+    );
   }
   getCryptopiaMarketsNames() {
     this._cryptopiaService.getMarketsNames().subscribe(

@@ -14,7 +14,7 @@ constructor(private _http: Http) { }
     return this._http.get('https://www.cryptopia.co.nz/api/GetMarkets')
                .map(response => response.json() as CryptopiaMarkets);
   }
-  getMarketsNames() {
+  getMarketsNames(): Observable<string[]> {
     return this.getMarkets()
                .map(response => {
                 const marketsNames = [];
