@@ -1,3 +1,4 @@
+import { NovaExchangeService } from './../../../services/nova-exchange/nova-exchange.service';
 import { ExmoService } from './../../../services/exmo/exmo.service';
 import { CCexService } from './../../../services/c-cex/c-cex.service';
 import { CryptopiaService } from './../../../services/cryptopia/cryptopia.service';
@@ -24,6 +25,7 @@ export class TestMarketsNamesComponent implements OnInit {
   _cryptopiaMarketsNames: string[] = [];
   _ccexMarketsNames: string[] = [];
   _exmoMarketsNames: string[] = [];
+  _novaExchangeMarketsNames: string[] = [];
 
   _poloniexMsg =  this._loadingMsg;
   _bittrexMsg =  this._loadingMsg;
@@ -32,6 +34,7 @@ export class TestMarketsNamesComponent implements OnInit {
   _cryptopiaMsg = this._loadingMsg;
   _exmoMsg = this._loadingMsg;
   _ccexMsg = this._loadingMsg;
+  _novaExchangeMsg = this._loadingMsg;
 
   constructor(
     private _appRef: ApplicationRef,
@@ -41,7 +44,8 @@ export class TestMarketsNamesComponent implements OnInit {
     private _hitbtcService: HitbtcService,
     private _cryptopiaService: CryptopiaService,
     private _ccexService: CCexService,
-    private _exmoService: ExmoService) { }
+    private _exmoService: ExmoService,
+    private _novaExchangeService: NovaExchangeService) { }
 
   ngOnInit() {
     this.getAllExchangesMarketsNames();
@@ -54,6 +58,20 @@ export class TestMarketsNamesComponent implements OnInit {
     this.getCryptopiaMarketsNames();
     this.getCcexMarketsNames();
     this.getExmoMarketsNames();
+    this.getNovaExchangeMarketsNames();
+  }
+  getNovaExchangeMarketsNames() {
+    this._novaExchangeService.getMarketsNames().subscribe(
+      data => this._novaExchangeMarketsNames = data,
+      error => {
+         this.handleError(error);
+         this._novaExchangeMsg = this._errorMsg;
+      },
+      () => {
+        this._novaExchangeMsg =  this._loadingMsg;
+        this._appRef.tick();
+      }
+    );
   }
   getExmoMarketsNames() {
     this._exmoService.getMarketsNames().subscribe(

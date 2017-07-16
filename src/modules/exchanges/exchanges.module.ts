@@ -1,3 +1,4 @@
+import { NovaExchangeService } from './../../services/nova-exchange/nova-exchange.service';
 import { ExmoService } from './../../services/exmo/exmo.service';
 import { CCexService } from './../../services/c-cex/c-cex.service';
 import { SlashToDashPipe } from './../../pipes/slash-to-dash.pipe';
@@ -30,7 +31,8 @@ import { TestMarketsNamesComponent } from './test-markets-names/test-markets-nam
     HitbtcService,
     CryptopiaService,
     CCexService,
-    ExmoService
+    ExmoService,
+    NovaExchangeService
   ],
   declarations: [
     ExchangesComponent,

@@ -105,4 +105,18 @@
             {{_exmoMsg}}
         </div>
     </div>
+    <div class="col-md-3  market-name-col">
+        <label class="label label-default">NovaExchange Markets</label><br>
+        <div *ngIf="_exmoMarketsNames.length > 1">
+            <label class="label label-success">{{_novaExchangeMarketsNames.length}} markets listed</label>
+            <div style="overflow-y: scroll; height:200px;">
+                <div *ngFor="let market of _novaExchangeMarketsNames">
+                    {{ market | underscoreToDash}}
+                </div>
+            </div>
+        </div>
+        <div *ngIf="_novaExchangeMarketsNames.length === 0">
+            {{_novaExchangeMsg}}
+        </div>
+    </div>
 </div>
