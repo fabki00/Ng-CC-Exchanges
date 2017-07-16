@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CCexService {
-_timeOut = 10000;
+_timeOut = 120000;
 constructor(private _http: Http) { }
   getMarketsSummaries(): Observable<CcexMarketsSummaries> {
     return this._http.get('https://c-cex.com/t/api_pub.html?a=getmarketsummaries')

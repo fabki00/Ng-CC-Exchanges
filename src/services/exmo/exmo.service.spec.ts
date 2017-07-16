@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
@@ -6,7 +7,10 @@ import { ExmoService } from './exmo.service';
 describe('Service: Exmo', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ExmoService]
+      providers: [ExmoService],
+      imports: [
+        HttpModule
+      ]
     });
   });
 

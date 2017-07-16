@@ -8,11 +8,11 @@ import { TestMarketsPipeOptions } from './../../../models/shared/test-markets-pi
 })
 export class TestMarketNameComponent implements OnInit {
   @Input()
-  _marketNames;
+  _marketNames = '';
   @Input()
-  _marketMsg;
+  _marketMsg = '';
    @Input()
-  _pipesOptions: string;
+  _pipesOptions = '';
 
   pipesOptions: TestMarketsPipeOptions;
   constructor() { }

@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ExmoService {
-_timeOut = 10000;
+_timeOut = 120000;
 constructor(private _http: Http) { }
   getPairSettings(): Observable<any> {
     return this._http.get('https://api.exmo.com/v1/pair_settings/')

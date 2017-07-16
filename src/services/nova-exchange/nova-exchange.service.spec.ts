@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
@@ -6,7 +7,10 @@ import { NovaExchangeService } from './nova-exchange.service';
 describe('Service: NovaExchange', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NovaExchangeService]
+      providers: [NovaExchangeService],
+      imports: [
+        HttpModule
+      ]
     });
   });
 

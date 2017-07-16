@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class HitbtcService {
-_timeOut = 10000;
+_timeOut = 120000;
 constructor(private _http: Http) { }
   getSymbols(): Observable<HitBtcSymbols> {
     return this._http.get('https://api.hitbtc.com/api/1/public/symbols')

@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class YobitService {
-_timeOut = 10000;
+_timeOut = 120000;
 constructor(private _http: Http) { }
 getMarketsNames(): Observable<string[]> {
     return this._http.get('https://yobit.net/api/3/info')

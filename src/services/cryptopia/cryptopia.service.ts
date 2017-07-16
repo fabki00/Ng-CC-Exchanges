@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CryptopiaService {
-_timeOut = 10000;
+_timeOut = 120000;
 constructor(private _http: Http) { }
   getMarkets(): Observable<CryptopiaMarkets> {
     return this._http.get('https://www.cryptopia.co.nz/api/GetMarkets')

@@ -10,7 +10,7 @@ import 'rxjs/add/observable/interval';
 
 @Injectable()
 export class NovaExchangeService {
-_timeOut = 10000;
+_timeOut = 120000;
 constructor(private _http: Http) { }
   getMarkets(timeNow?): Observable<NovaExchangeMarkets> {// Limited at 1 call/minute ! TODO: test timeNow .
     return this._http.get('https://novaexchange.com/remote/v2/markets/')

@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/timeout';
 @Injectable()
 export class PoloniexService {
-_timeOut = 10000;
+_timeOut = 120000;
 constructor(private _http: Http) { }
 getReturnTicker() {
    return this._http.get('https://poloniex.com/public?command=returnTicker')

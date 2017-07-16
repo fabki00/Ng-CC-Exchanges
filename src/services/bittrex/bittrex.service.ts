@@ -14,7 +14,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class BittrexService {
-_timeOut = 10000;
+_timeOut = 120000;
 constructor(private _http: Http) {}
 /* OrderBook */
     getOrderBook(market, type= 'both', depth= 50) {

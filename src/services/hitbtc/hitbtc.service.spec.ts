@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
@@ -6,7 +7,10 @@ import { HitbtcService } from './hitbtc.service';
 describe('Service: Hitbtc', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HitbtcService]
+      providers: [HitbtcService],
+      imports: [
+        HttpModule
+      ]
     });
   });
 
