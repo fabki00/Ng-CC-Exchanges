@@ -1,4 +1,8 @@
-
-.market-name-title,.market-name-col{
+.market-name-title,
+.market-name-col {
     text-align: center;
+}
+
+.market-name-title {
+    color: grey;
 }

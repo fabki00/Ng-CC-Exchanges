@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { TestMarketsPipeOptions } from './../../../models/shared/test-markets-pipe-options';
 @Component({
   selector: 'app-test-market-name',
   templateUrl: './test-market-name.component.html',
@@ -10,9 +11,14 @@ export class TestMarketNameComponent implements OnInit {
   _marketNames;
   @Input()
   _marketMsg;
+   @Input()
+  _pipesOptions: string;
+
+  pipesOptions: TestMarketsPipeOptions;
   constructor() { }
 
   ngOnInit() {
+    this.pipesOptions = new TestMarketsPipeOptions();
   }
 
 }

@@ -1,41 +1,42 @@
-<div class="market-name-title">
-    <h1 class="market-name-title">Markets Names</h1>
-</div>
-<hr>
-<div class="row">
-    <div class="col-md-3 market-name-col">
-        <label class="label label-default">Bittrex Markets</label><br>
-        <app-test-market-name [_marketNames]="_bittrexMarketsNames" [_marketMsg]="_bittrexMsg"></app-test-market-name>
+<div class="market-test-name-container">
+    <div class="market-name-title">
+        <h1 class="market-name-title"><strong> Markets Name</strong></h1>
     </div>
-    <div class="col-md-3 market-name-col">
-        <label class="label label-default">Poloniex Markets</label><br>
-        <app-test-market-name [_marketNames]="_poloniexMarketsNames" [_marketMsg]="_poloniexMsg"></app-test-market-name>
+    <br>
+    <div class="row">
+        <div class="col-md-3 market-name-col">
+            <label class="label label-default label-custom">Bittrex Markets</label><br>
+            <app-test-market-name [_marketNames]="_bittrexMarketsNames" [_marketMsg]="_bittrexMsg" [_pipesOptions]=""></app-test-market-name>
+        </div>
+        <div class="col-md-3 market-name-col">
+            <label class="label label-default label-custom">Poloniex Markets</label><br>
+            <app-test-market-name [_marketNames]="_poloniexMarketsNames" [_marketMsg]="_poloniexMsg" [_pipesOptions]=""></app-test-market-name>
+        </div>
+        <div class="col-md-3  market-name-col">
+            <label class="label label-default label-custom">Yobit Markets</label><br>
+            <app-test-market-name [_marketNames]="_yobitMarketsNames" [_marketMsg]="_yobitMsg" [_pipesOptions]="_pipesOptions.all"></app-test-market-name>
+        </div>
+        <div class="col-md-3  market-name-col">
+            <label class="label label-default label-custom">Hitbtc Markets</label><br>
+            <app-test-market-name [_marketNames]="_hitbtcMarketsNames" [_marketMsg]="_hitbtcMsg" [_pipesOptions]=""></app-test-market-name>
+        </div>
     </div>
-    <div class="col-md-3  market-name-col">
-        <label class="label label-default">Yobit Markets</label><br>
-        <app-test-market-name [_marketNames]="_yobitMarketsNames" [_marketMsg]="_yobitMsg"></app-test-market-name>
-    </div>
-    <div class="col-md-3  market-name-col">
-        <label class="label label-default">Hitbtc Markets</label><br>
-        <app-test-market-name [_marketNames]="_hitbtcMarketsNames" [_marketMsg]="_hitbtcMsg"></app-test-market-name>
-    </div>
-</div>
-<hr>
-<div class="row">
-    <div class="col-md-3  market-name-col">
-        <label class="label label-default">Cryptopia Markets</label><br>
-        <app-test-market-name [_marketNames]="_cryptopiaMarketsNames" [_marketMsg]="_cryptopiaMsg"></app-test-market-name>
-    </div>
-    <div class="col-md-3  market-name-col">
-        <label class="label label-default">C-cex Markets</label><br>
-        <app-test-market-name [_marketNames]="_ccexMarketsNames" [_marketMsg]="_ccexMsg"></app-test-market-name>
-    </div>
-    <div class="col-md-3  market-name-col">
-        <label class="label label-default">Exmo Markets</label><br>
-        <app-test-market-name [_marketNames]="_exmoMarketsNames" [_marketMsg]="_exmoMsg"></app-test-market-name>
-    </div>
-    <div class="col-md-3  market-name-col">
-        <label class="label label-default">NovaExchange Markets</label><br>
-        <app-test-market-name [_marketNames]="_novaExchangeMarketsNames" [_marketMsg]="_novaExchangeMsg"></app-test-market-name>
+    <div class="row">
+        <div class="col-md-3  market-name-col">
+            <label class="label label-default label-custom">Cryptopia Markets</label><br>
+            <app-test-market-name [_marketNames]="_cryptopiaMarketsNames" [_marketMsg]="_cryptopiaMsg" [_pipesOptions]="_pipesOptions.slashToDash"></app-test-market-name>
+        </div>
+        <div class="col-md-3  market-name-col">
+            <label class="label label-default label-custom">C-cex Markets</label><br>
+            <app-test-market-name [_marketNames]="_ccexMarketsNames" [_marketMsg]="_ccexMsg" [_pipesOptions]="_pipesOptions.invertPairKey"></app-test-market-name>
+        </div>
+        <div class="col-md-3  market-name-col">
+            <label class="label label-default label-custom">Exmo Markets</label><br>
+            <app-test-market-name [_marketNames]="_exmoMarketsNames" [_marketMsg]="_exmoMsg" [_pipesOptions]="_pipesOptions.underscoreToDash"></app-test-market-name>
+        </div>
+        <div class="col-md-3  market-name-col">
+            <label class="label label-default label-custom">NovaExchange Markets</label><br>
+            <app-test-market-name [_marketNames]="_novaExchangeMarketsNames" [_marketMsg]="_novaExchangeMsg" [_pipesOptions]="_pipesOptions.underscoreToDash"></app-test-market-name>
+        </div>
     </div>
 </div>
