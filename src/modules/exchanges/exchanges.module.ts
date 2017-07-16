@@ -1,3 +1,4 @@
+import { UnderscoreToDashPipe } from './../../pipes/underscore-to-dash.pipe';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,8 +18,10 @@ import { TestMarketsNamesComponent } from './test-markets-names/test-markets-nam
     HttpModule,
   ],
   providers: [BittrexService, PoloniexService, YobitService],
-  declarations: [ExchangesComponent,
-    TestMarketsNamesComponent
+  declarations: [
+    ExchangesComponent,
+    TestMarketsNamesComponent,
+    UnderscoreToDashPipe
 ],
   exports: [ExchangesComponent],
   bootstrap: [ExchangesComponent]

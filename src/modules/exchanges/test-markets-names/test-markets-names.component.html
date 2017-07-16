@@ -15,7 +15,7 @@
     <label class="label label-default">Poloniex Markets Name</label>
     <div style="overflow-y: scroll; height:200px;">
       <div *ngFor="let market of _poloniexMarketsNames">
-        {{ market }}
+        {{ market | underscoreToDash}}
       </div>
     </div>
 
@@ -24,7 +24,7 @@
     <label class="label label-default">Yobit Markets Name</label>
     <div style="overflow-y: scroll; height:200px;">
       <div *ngFor="let market of _yobitMarketsNames">
-        {{ market }}
+        {{ market | underscoreToDash | uppercase }}
       </div>
     </div>
   </div>
