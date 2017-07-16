@@ -4,13 +4,15 @@ import { Injectable } from '@angular/core';
 /* Rxjs Import */
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/timeout';
 @Injectable()
 export class PoloniexService {
 
 constructor(private _http: Http) { }
 getReturnTicker() {
    return this._http.get('https://poloniex.com/public?command=returnTicker')
-                    .map(response => response.json());
+                    .map(response => response.json())
+                    .timeout(6000);
 }
 getMarketsNames(): Observable<string[]> {
     return this.getReturnTicker()
@@ -23,7 +25,7 @@ getMarketsNames(): Observable<string[]> {
             }
         }
         return marketsNames;
-    });
+    }).timeout(6000);
 }
  getTicker(): Observable<PoloniexTicker[]> {
     return this.getReturnTicker()
@@ -43,6 +45,6 @@ getMarketsNames(): Observable<string[]> {
             }
         }
         return finalPoloniexJSon;
-    });
+    }).timeout(6000);
 }
 }

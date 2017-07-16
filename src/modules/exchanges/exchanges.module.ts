@@ -1,3 +1,4 @@
+import { ExmoService } from './../../services/exmo/exmo.service';
 import { CCexService } from './../../services/c-cex/c-cex.service';
 import { SlashToDashPipe } from './../../pipes/slash-to-dash.pipe';
 import { CryptopiaService } from './../../services/cryptopia/cryptopia.service';
@@ -28,7 +29,8 @@ import { TestMarketsNamesComponent } from './test-markets-names/test-markets-nam
     YobitService,
     HitbtcService,
     CryptopiaService,
-    CCexService
+    CCexService,
+    ExmoService
   ],
   declarations: [
     ExchangesComponent,

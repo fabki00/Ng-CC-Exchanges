@@ -14,7 +14,7 @@
             </div>
         </div>
         <div *ngIf="_bittrexMarketsNames.length === 0">
-            Loading...
+            {{_bittrexMsg}}
         </div>
     </div>
     <div class="col-md-3 market-name-col">
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div *ngIf="_poloniexMarketsNames.length === 0">
-            Loading...
+            {{_poloniexMsg}}
         </div>
 
     </div>
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div *ngIf="_yobitMarketsNames.length === 0">
-            Loading...
+            {{_yobitMsg}}
         </div>
     </div>
     <div class="col-md-3  market-name-col">
@@ -57,7 +57,7 @@
             </div>
         </div>
         <div *ngIf="_hitbtcMarketsNames.length === 0">
-            Loading...
+            {{_hitbtcMsg}}
         </div>
     </div>
 </div>
@@ -74,7 +74,7 @@
             </div>
         </div>
         <div *ngIf="_cryptopiaMarketsNames.length === 0">
-            Loading...
+            {{_cryptopiaMsg}}
         </div>
     </div>
     <div class="col-md-3  market-name-col">
@@ -88,7 +88,21 @@
             </div>
         </div>
         <div *ngIf="_ccexMarketsNames.length === 0">
-            Loading...
+            {{_ccexMsg}}
+        </div>
+    </div>
+    <div class="col-md-3  market-name-col">
+        <label class="label label-default">Exmo Markets</label><br>
+        <div *ngIf="_exmoMarketsNames.length > 1">
+            <label class="label label-success">{{_exmoMarketsNames.length}} markets listed</label>
+            <div style="overflow-y: scroll; height:200px;">
+                <div *ngFor="let market of _exmoMarketsNames">
+                    {{ market | underscoreToDash}}
+                </div>
+            </div>
+        </div>
+        <div *ngIf="_exmoMarketsNames.length === 0">
+            {{_exmoMsg}}
         </div>
     </div>
 </div>

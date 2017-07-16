@@ -12,7 +12,8 @@ export class CryptopiaService {
 constructor(private _http: Http) { }
   getMarkets(): Observable<CryptopiaMarkets> {
     return this._http.get('https://www.cryptopia.co.nz/api/GetMarkets')
-               .map(response => response.json() as CryptopiaMarkets);
+               .map(response => response.json() as CryptopiaMarkets)
+               .timeout(6000);
   }
   getMarketsNames(): Observable<string[]> {
     return this.getMarkets()
@@ -24,6 +25,6 @@ constructor(private _http: Http) { }
                   });
                 }
                 return marketsNames;
-               });
+               }).timeout(6000);
   }
 }

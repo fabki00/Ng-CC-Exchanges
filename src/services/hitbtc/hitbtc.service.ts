@@ -12,7 +12,8 @@ export class HitbtcService {
 constructor(private _http: Http) { }
   getSymbols(): Observable<HitBtcSymbols> {
     return this._http.get('https://api.hitbtc.com/api/1/public/symbols')
-                     .map(response => response.json() as HitBtcSymbols);
+                     .map(response => response.json() as HitBtcSymbols)
+                     .timeout(6000);
   }
   getMarketsNames(): Observable<string[]> {
     return this.getSymbols()
@@ -22,6 +23,6 @@ constructor(private _http: Http) { }
                   marketsNames.push(el.symbol.replace(el.commodity, el.commodity + '-'));
                 });
               return marketsNames;
-    });
+    }).timeout(6000);
   }
 }

@@ -19,6 +19,6 @@ getMarketsNames(): Observable<string[]> {
                 }
             }
         return marketsNames;
-        });
+        }).timeout(6000);
     }
 }

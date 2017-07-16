@@ -1,3 +1,4 @@
+import { ExmoService } from './../../../services/exmo/exmo.service';
 import { CCexService } from './../../../services/c-cex/c-cex.service';
 import { CryptopiaService } from './../../../services/cryptopia/cryptopia.service';
 import { HitbtcService } from './../../../services/hitbtc/hitbtc.service';
@@ -13,12 +14,25 @@ import { BittrexService } from './../../../services/bittrex/bittrex.service';
   styleUrls: ['./test-markets-names.component.css']
 })
 export class TestMarketsNamesComponent implements OnInit {
+   _errorMsg = 'technical error occured';
+   _loadingMsg = 'Loading ...';
+
   _poloniexMarketsNames: string[] = [];
   _bittrexMarketsNames: string[] = [];
   _yobitMarketsNames: string[] = [];
   _hitbtcMarketsNames: string[] = [];
   _cryptopiaMarketsNames: string[] = [];
   _ccexMarketsNames: string[] = [];
+  _exmoMarketsNames: string[] = [];
+
+  _poloniexMsg =  this._loadingMsg;
+  _bittrexMsg =  this._loadingMsg;
+  _yobitMsg =  this._loadingMsg;
+  _hitbtcMsg =  this._loadingMsg;
+  _cryptopiaMsg = this._loadingMsg;
+  _exmoMsg = this._loadingMsg;
+  _ccexMsg = this._loadingMsg;
+
   constructor(
     private _appRef: ApplicationRef,
     private _bittrexService: BittrexService,
@@ -26,7 +40,8 @@ export class TestMarketsNamesComponent implements OnInit {
     private _yobitService: YobitService,
     private _hitbtcService: HitbtcService,
     private _cryptopiaService: CryptopiaService,
-    private _ccexService: CCexService) { }
+    private _ccexService: CCexService,
+    private _exmoService: ExmoService) { }
 
   ngOnInit() {
     this.getAllExchangesMarketsNames();
@@ -38,71 +53,97 @@ export class TestMarketsNamesComponent implements OnInit {
     this.getHitbtcMarketsNames();
     this.getCryptopiaMarketsNames();
     this.getCcexMarketsNames();
+    this.getExmoMarketsNames();
+  }
+  getExmoMarketsNames() {
+    this._exmoService.getMarketsNames().subscribe(
+      data => this._exmoMarketsNames = data,
+      error => {
+         this.handleError(error);
+         this._exmoMsg = this._errorMsg;
+      },
+      () => {
+        this._exmoMsg =  this._loadingMsg;
+        this._appRef.tick();
+      }
+    );
   }
   getCcexMarketsNames() {
-    let errorCounter = 0;
     this._ccexService.getMarketsNames().subscribe(
       data => this._ccexMarketsNames = data,
       error => {
-        errorCounter++;
-        errorCounter <= 5 ? this.getCcexMarketsNames() : this.handleError(error);
+         this.handleError(error);
+         this._ccexMsg = this._errorMsg;
       },
-      () => this._appRef.tick()
+      () => {
+        this._ccexMsg =  this._loadingMsg;
+        this._appRef.tick();
+      }
     );
   }
-  getCryptopiaMarketsNames() {
-    let errorCounter = 0;
+getCryptopiaMarketsNames() {
     this._cryptopiaService.getMarketsNames().subscribe(
       data => this._cryptopiaMarketsNames = data,
       error => {
-        errorCounter++;
-        errorCounter <= 5 ? this.getCryptopiaMarketsNames() : this.handleError(error);
+         this.handleError(error);
+         this._cryptopiaMsg = this._errorMsg;
       },
-      () => this._appRef.tick()
+      () => {
+        this._cryptopiaMsg =  this._loadingMsg;
+        this._appRef.tick();
+      }
     );
   }
   getHitbtcMarketsNames() {
-    let errorCounter = 0;
     this._hitbtcService.getMarketsNames().subscribe(
       data => this._hitbtcMarketsNames = data,
-      error => {
-        errorCounter++;
-        errorCounter <= 5 ? this.getHitbtcMarketsNames() : this.handleError(error);
+     error => {
+         this.handleError(error);
+         this._hitbtcMsg = this._errorMsg;
       },
-      () => this._appRef.tick()
+      () => {
+        this._hitbtcMsg =  this._loadingMsg;
+        this._appRef.tick();
+      }
     );
   }
   getYobitMarketsNames() {
-    let errorCounter = 0;
     this._yobitService.getMarketsNames().subscribe(
       data => this._yobitMarketsNames = data,
       error => {
-        errorCounter++;
-        errorCounter <= 5 ? this.getYobitMarketsNames() : this.handleError(error);
+         this.handleError(error);
+         this._yobitMsg = this._errorMsg;
       },
-      () => this._appRef.tick()
+      () => {
+        this._yobitMsg =  this._loadingMsg;
+        this._appRef.tick();
+      }
     );
   }
   getPoloniexMarketsNames() {
-    let errorCounter = 0;
     this._poloniexService.getMarketsNames().subscribe(
       data => this._poloniexMarketsNames = data,
       error => {
-        errorCounter++;
-        errorCounter <= 5 ? this.getPoloniexMarketsNames() : this.handleError(error);
+         this.handleError(error);
+         this._poloniexMsg = this._errorMsg;
       },
-      () => this._appRef.tick()
+      () => {
+        this._poloniexMsg =  this._loadingMsg;
+        this._appRef.tick();
+      }
     );
   }
   getBittrexMarketsNames() {
-    let errorCounter = 0;
     this._bittrexService.getMarketsNames().subscribe(
       data => this._bittrexMarketsNames = data,
       error => {
-        errorCounter++;
-        errorCounter <= 5 ? this.getBittrexMarketsNames() : this.handleError(error);
+         this.handleError(error);
+         this._bittrexMsg = this._errorMsg;
       },
-      () => this._appRef.tick()
+      () => {
+        this._bittrexMsg =  this._loadingMsg;
+        this._appRef.tick();
+      }
     );
   }
   handleError(error) {
