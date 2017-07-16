@@ -1,3 +1,4 @@
+import { InvertPairKeyPipe } from './../../pipes/invert-pair-key.pipe';
 import { UnderscoreToDashPipe } from './../../pipes/underscore-to-dash.pipe';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
@@ -21,7 +22,8 @@ import { TestMarketsNamesComponent } from './test-markets-names/test-markets-nam
   declarations: [
     ExchangesComponent,
     TestMarketsNamesComponent,
-    UnderscoreToDashPipe
+    UnderscoreToDashPipe,
+    InvertPairKeyPipe
 ],
   exports: [ExchangesComponent],
   bootstrap: [ExchangesComponent]
