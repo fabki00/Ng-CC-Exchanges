@@ -1,3 +1,6 @@
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { YobitService } from './../../services/yobit/yobit.service';
 import { PoloniexService } from './../../services/poloniex/poloniex.service';
 import { BittrexService } from './../../services/bittrex/bittrex.service';
@@ -8,12 +11,16 @@ import { TestMarketsNamesComponent } from './test-markets-names/test-markets-nam
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    FormsModule,
+    HttpModule,
   ],
   providers: [BittrexService, PoloniexService, YobitService],
   declarations: [ExchangesComponent,
     TestMarketsNamesComponent
 ],
-  exports: [ExchangesComponent]
+  exports: [ExchangesComponent],
+  bootstrap: [ExchangesComponent]
 })
 export class ExchangesModule { }
