@@ -1,4 +1,5 @@
 import { CryptopiaMarkets } from './../../models/cryptopia/cryptopia-get-markets';
+import { CryptopiaTradePairs } from './../../models/cryptopia/cryptopia-get-trade-pairs';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 
@@ -15,8 +16,13 @@ constructor(private _http: Http) { }
                .map(response => response.json() as CryptopiaMarkets)
                .timeout(this._timeOut);
   }
+  getTradePairs(): Observable<CryptopiaTradePairs> {
+    return this._http.get('https://www.cryptopia.co.nz/api/GetTradePairs')
+               .map(response => response.json() as CryptopiaTradePairs)
+               .timeout(this._timeOut);
+  }
   getMarketsNames(): Observable<string[]> {
-    return this.getMarkets()
+    return this.getTradePairs()
                .map(response => {
                 const marketsNames = [];
                 if (response.Success) {

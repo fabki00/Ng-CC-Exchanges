@@ -5,118 +5,37 @@
 <div class="row">
     <div class="col-md-3 market-name-col">
         <label class="label label-default">Bittrex Markets</label><br>
-        <div *ngIf="_bittrexMarketsNames.length > 1">
-            <label class="label label-success">{{_bittrexMarketsNames.length}} markets listed</label>
-            <div style="overflow-y: scroll; height:200px;">
-                <div *ngFor="let market of _bittrexMarketsNames">
-                    {{ market }}
-                </div>
-            </div>
-        </div>
-        <div *ngIf="_bittrexMarketsNames.length === 0">
-            {{_bittrexMsg}}
-        </div>
+        <app-test-market-name [_marketNames]="_bittrexMarketsNames" [_marketMsg]="_bittrexMsg"></app-test-market-name>
     </div>
     <div class="col-md-3 market-name-col">
         <label class="label label-default">Poloniex Markets</label><br>
-        <div *ngIf="_poloniexMarketsNames.length > 1">
-            <label class="label label-success">{{_poloniexMarketsNames.length}} markets listed</label>
-            <div style="overflow-y: scroll; height:200px;">
-                <div *ngFor="let market of _poloniexMarketsNames">
-                    {{ market | underscoreToDash}}
-                </div>
-            </div>
-        </div>
-        <div *ngIf="_poloniexMarketsNames.length === 0">
-            {{_poloniexMsg}}
-        </div>
-
+        <app-test-market-name [_marketNames]="_poloniexMarketsNames" [_marketMsg]="_poloniexMsg"></app-test-market-name>
     </div>
     <div class="col-md-3  market-name-col">
         <label class="label label-default">Yobit Markets</label><br>
-        <div *ngIf="_yobitMarketsNames.length > 1">
-            <label class="label label-success">{{_yobitMarketsNames.length}} markets listed</label>
-            <div style="overflow-y: scroll; height:200px;">
-                <div *ngFor="let market of _yobitMarketsNames">
-                    {{ market | underscoreToDash | uppercase | invertPairKey}}
-                </div>
-            </div>
-        </div>
-        <div *ngIf="_yobitMarketsNames.length === 0">
-            {{_yobitMsg}}
-        </div>
+        <app-test-market-name [_marketNames]="_yobitMarketsNames" [_marketMsg]="_yobitMsg"></app-test-market-name>
     </div>
     <div class="col-md-3  market-name-col">
         <label class="label label-default">Hitbtc Markets</label><br>
-        <div *ngIf="_hitbtcMarketsNames.length > 1">
-            <label class="label label-success">{{_hitbtcMarketsNames.length}} markets listed</label>
-            <div style="overflow-y: scroll; height:200px;">
-                <div *ngFor="let market of _hitbtcMarketsNames">
-                    {{ market }}
-                </div>
-            </div>
-        </div>
-        <div *ngIf="_hitbtcMarketsNames.length === 0">
-            {{_hitbtcMsg}}
-        </div>
+        <app-test-market-name [_marketNames]="_hitbtcMarketsNames" [_marketMsg]="_hitbtcMsg"></app-test-market-name>
     </div>
 </div>
 <hr>
 <div class="row">
     <div class="col-md-3  market-name-col">
         <label class="label label-default">Cryptopia Markets</label><br>
-        <div *ngIf="_cryptopiaMarketsNames.length > 1">
-            <label class="label label-success">{{_cryptopiaMarketsNames.length}} markets listed</label>
-            <div style="overflow-y: scroll; height:200px;">
-                <div *ngFor="let market of _cryptopiaMarketsNames">
-                    {{ market | slashToDash}}
-                </div>
-            </div>
-        </div>
-        <div *ngIf="_cryptopiaMarketsNames.length === 0">
-            {{_cryptopiaMsg}}
-        </div>
+        <app-test-market-name [_marketNames]="_cryptopiaMarketsNames" [_marketMsg]="_cryptopiaMsg"></app-test-market-name>
     </div>
     <div class="col-md-3  market-name-col">
         <label class="label label-default">C-cex Markets</label><br>
-        <div *ngIf="_ccexMarketsNames.length > 1">
-            <label class="label label-success">{{_ccexMarketsNames.length}} markets listed</label>
-            <div style="overflow-y: scroll; height:200px;">
-                <div *ngFor="let market of _ccexMarketsNames">
-                    {{ market }}
-                </div>
-            </div>
-        </div>
-        <div *ngIf="_ccexMarketsNames.length === 0">
-            {{_ccexMsg}}
-        </div>
+        <app-test-market-name [_marketNames]="_ccexMarketsNames" [_marketMsg]="_ccexMsg"></app-test-market-name>
     </div>
     <div class="col-md-3  market-name-col">
         <label class="label label-default">Exmo Markets</label><br>
-        <div *ngIf="_exmoMarketsNames.length > 1">
-            <label class="label label-success">{{_exmoMarketsNames.length}} markets listed</label>
-            <div style="overflow-y: scroll; height:200px;">
-                <div *ngFor="let market of _exmoMarketsNames">
-                    {{ market | underscoreToDash}}
-                </div>
-            </div>
-        </div>
-        <div *ngIf="_exmoMarketsNames.length === 0">
-            {{_exmoMsg}}
-        </div>
+        <app-test-market-name [_marketNames]="_exmoMarketsNames" [_marketMsg]="_exmoMsg"></app-test-market-name>
     </div>
     <div class="col-md-3  market-name-col">
         <label class="label label-default">NovaExchange Markets</label><br>
-        <div *ngIf="_exmoMarketsNames.length > 1">
-            <label class="label label-success">{{_novaExchangeMarketsNames.length}} markets listed</label>
-            <div style="overflow-y: scroll; height:200px;">
-                <div *ngFor="let market of _novaExchangeMarketsNames">
-                    {{ market | underscoreToDash}}
-                </div>
-            </div>
-        </div>
-        <div *ngIf="_novaExchangeMarketsNames.length === 0">
-            {{_novaExchangeMsg}}
-        </div>
+        <app-test-market-name [_marketNames]="_novaExchangeMarketsNames" [_marketMsg]="_novaExchangeMsg"></app-test-market-name>
     </div>
 </div>

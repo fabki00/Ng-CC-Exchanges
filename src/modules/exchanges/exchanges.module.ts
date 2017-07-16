@@ -16,6 +16,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExchangesComponent } from './exchanges.component';
 import { TestMarketsNamesComponent } from './test-markets-names/test-markets-names.component';
+import { TestMarketNameComponent } from './test-market-name/test-market-name.component';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { TestMarketsNamesComponent } from './test-markets-names/test-markets-nam
     TestMarketsNamesComponent,
     UnderscoreToDashPipe,
     InvertPairKeyPipe,
-    SlashToDashPipe
+    SlashToDashPipe,
+    TestMarketNameComponent
 ],
   exports: [ExchangesComponent],
   bootstrap: [ExchangesComponent]

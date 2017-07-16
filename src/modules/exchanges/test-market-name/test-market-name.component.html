@@ -1,0 +1,11 @@
+<div *ngIf="_marketNames.length > 1">
+    <label class="label label-success">{{_marketNames.length}} markets listed</label>
+    <div style="overflow-y: scroll; height:200px;">
+        <div *ngFor="let market of _marketNames">
+            {{ market }}
+        </div>
+    </div>
+</div>
+<div *ngIf="_marketNames.length === 0">
+    {{_marketMsg}}
+</div>
