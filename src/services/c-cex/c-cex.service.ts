@@ -8,12 +8,12 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CCexService {
-
+_timeOut = 10000;
 constructor(private _http: Http) { }
   getMarketsSummaries(): Observable<CcexMarketsSummaries> {
     return this._http.get('https://c-cex.com/t/api_pub.html?a=getmarketsummaries')
                       .map(response => response.json() as CcexMarketsSummaries)
-                      .timeout(6000);
+                      .timeout(this._timeOut);
   }
   getMarketsNames(): Observable<string[]> {
     return this.getMarketsSummaries()
@@ -25,6 +25,6 @@ constructor(private _http: Http) { }
                   });
                   return marketsNames;
                 }
-              }).timeout(6000);
+              }).timeout(this._timeOut);
   }
 }

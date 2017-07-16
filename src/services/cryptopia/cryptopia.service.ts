@@ -8,12 +8,12 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CryptopiaService {
-
+_timeOut = 10000;
 constructor(private _http: Http) { }
   getMarkets(): Observable<CryptopiaMarkets> {
     return this._http.get('https://www.cryptopia.co.nz/api/GetMarkets')
                .map(response => response.json() as CryptopiaMarkets)
-               .timeout(6000);
+               .timeout(this._timeOut);
   }
   getMarketsNames(): Observable<string[]> {
     return this.getMarkets()
@@ -25,6 +25,6 @@ constructor(private _http: Http) { }
                   });
                 }
                 return marketsNames;
-               }).timeout(6000);
+               }).timeout(this._timeOut);
   }
 }

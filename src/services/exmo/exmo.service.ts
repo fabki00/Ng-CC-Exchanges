@@ -8,12 +8,12 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ExmoService {
-
+_timeOut = 10000;
 constructor(private _http: Http) { }
   getPairSettings(): Observable<any> {
     return this._http.get('https://api.exmo.com/v1/pair_settings/')
                      .map(response => response.json())
-                     .timeout(6000);
+                     .timeout(this._timeOut);
   }
   getMarketsNames(): Observable<string[]> {
     return this.getPairSettings()
@@ -25,6 +25,6 @@ constructor(private _http: Http) { }
                   }
                 }
                 return marketsNames;
-               }).timeout(6000);
+               }).timeout(this._timeOut);
   }
 }
