@@ -1,4 +1,4 @@
-import { PoloniexMarket } from './../../models/poloniex/poloniex-ticker';
+import { PoloniexTicker } from './../../models/poloniex/poloniex-ticker';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 /* Rxjs Import */
@@ -8,45 +8,35 @@ import 'rxjs/add/operator/map';
 export class PoloniexService {
 
 constructor(private _http: Http) { }
-    getTicker() {
-        return this._http.get('https://poloniex.com/public?command=returnTicker')
-            .map(response => {
-                const poloniexJsonString = JSON.stringify(response.json()).split(/(:{|},)/);
-                const reconstructPoloniex = [];
-                const finalPoloniex = [];
-                const finalPoloniexJSon = [];
-                poloniexJsonString.forEach(elem => {
-                    const el = elem.replace(/({|})/, '');
-                    if (el.length > 1) {
-                        reconstructPoloniex.push(el);
-                    }
-                });
-                for (let index = 1; index < reconstructPoloniex.length; index += 2) {
-                    const market = reconstructPoloniex[index - 1].replace('_', '-');
-                    const jsonString = '{"market":' + market + ',' + reconstructPoloniex[index] + '}';
-                    try {
+getMarketsNames(): Observable<string[]> {
+    return this._http.get('https://poloniex.com/public?command=returnTicker').map(response => {
+        const pairs = response.json();
+        const marketsNames = [];
+        for (const key in pairs) {
+            if (pairs.hasOwnProperty(key)) {
+                marketsNames.push(key);
+            }
+        }
+        return marketsNames;
+    });
+}
+ getTicker(): Observable<PoloniexTicker[]> {
+    return this._http.get('https://poloniex.com/public?command=returnTicker').map(response => {
+        const pairs = response.json();
+        const finalPoloniexJSon = [];
+        for (const key in pairs) {
+            if (pairs.hasOwnProperty(key)) {
+                const jsonString = '{"market":"' + key + '",' + JSON.stringify(pairs[key]).replace('{', '');
+                try {
                         if (JSON.parse(jsonString)) {
                             finalPoloniexJSon.push(JSON.parse(jsonString));
                         }
                     }catch (e) {
-                        console.log('error json poloniex', jsonString);
+                        console.error('error json poloniex', jsonString);
                     }
-                }
-                return finalPoloniexJSon;
-            });
-    }
-    getMarketsNames() {
-        return this._http.get('https://poloniex.com/public?command=returnTicker')
-            .map(response => {
-                const poloniexJsonString = JSON.stringify(response.json()).split(/(:{|},)/);
-                const poloniexMarketsNames = [];
-                poloniexJsonString.forEach(elem => {
-                    const el = elem.replace(/({|})/, '');
-                    if (el.indexOf('_') > 1) {
-                        poloniexMarketsNames.push(el.replace('"', ''));
-                    }
-                });
-                return poloniexMarketsNames;
-            });
-    }
+            }
+        }
+        return finalPoloniexJSon;
+    });
+}
 }

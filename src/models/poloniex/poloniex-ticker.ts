@@ -1,4 +1,4 @@
-export interface PoloniexMarket {
+export interface PoloniexTicker {
   market: string;
   id: number;
   last: string;

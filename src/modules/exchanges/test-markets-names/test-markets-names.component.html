@@ -4,21 +4,35 @@
 <hr>
 <div class="row">
   <div class="col-md-3 market-name-col">
-    <h4>Bittrex Markets Name</h4>
-    <div *ngFor="let market of _bittrexMarketsNames">
-      {{ market }}
+    <label class="label label-default">Bittrex Markets Name</label>
+    <div style="overflow-y: scroll; height:200px;">
+      <div *ngFor="let market of _bittrexMarketsNames">
+        {{ market }}
+      </div>
     </div>
   </div>
   <div class="col-md-3 market-name-col">
-    <h4>Poloniex Markets Name</h4>
-    <div *ngFor="let market of _poloniexMarketsNames">
-      {{ market }}
+    <label class="label label-default">Poloniex Markets Name</label>
+    <div style="overflow-y: scroll; height:200px;">
+      <div *ngFor="let market of _poloniexMarketsNames">
+        {{ market }}
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-3  market-name-col">
+    <label class="label label-default">Yobit Markets Name</label>
+    <div style="overflow-y: scroll; height:200px;">
+      <div *ngFor="let market of _yobitMarketsNames">
+        {{ market }}
+      </div>
     </div>
   </div>
   <div class="col-md-3">
-    
-  </div>
-  <div class="col-md-3">
-    
+     <!--
+    <div style="overflow-y: scroll; height:200px;">
+
+    </div>
+    -->
   </div>
 </div>
