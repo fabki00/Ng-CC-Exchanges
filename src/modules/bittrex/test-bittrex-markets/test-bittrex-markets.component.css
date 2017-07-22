@@ -21,6 +21,13 @@ img {
     height: 25px;
 }
 
+.search-input {
+    border-radius: 4px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+}
+
  ::-webkit-scrollbar {
     width: 12px;
 }

@@ -3,10 +3,10 @@
         <div class="currencies-title">
             <h3 class="currencies-title"><strong> {{_exchangeName}} markets name</strong></h3>
         </div>
+        <div>
+            <input type="text" class="search-input" name="filter" id="market-filter" placeholder="search engine" [(ngModel)]="filter">
+        </div>
 
-        <input type="text" class="search-input" name="filter" id="market-filter" placeholder="search engine" [(ngModel)]="filter">
-        <br>
-        <label class="label label-default">{{_marketNames.length}} markets listed</label>
         <div class="scroll-bar">
             <div *ngFor="let market of _marketNames | searchMarketName:filter let i =index" class="market-list-item">
                 <div>

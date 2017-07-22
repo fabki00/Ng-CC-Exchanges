@@ -4,7 +4,7 @@
             <h3 class="bittrex-currencies-title"><strong> Bittrex markets</strong></h3>
         </div>
         <div>
-            <input type="text" placeholder="search engine" [(ngModel)]="filter">
+            <input type="text" class="search-input" placeholder="search engine" [(ngModel)]="filter">
         </div>
         <div class="scroll-bar">
             <div class="bittrex-currencies" *ngFor="let currency of _currencies| searchMarket:filter">
