@@ -1,0 +1,34 @@
+<div class="bittrex-currencies-container">
+    <div class="bittrex-currencies-title">
+        <h1 class="bittrex-currencies-title"><strong> Bittrex Currencies</strong></h1>
+    </div>
+    <div class="bittrex-currencies-sub-container" *ngIf="_currencies.length > 0">
+        <div class="bittrex-currencies" *ngFor="let currency of _currencies">
+            <h3><label class="label label-default">{{currency.Currency}}  {{currency.CurrencyLong}}</label></h3>
+            <div class="bittrex-info">
+                <label class="label label-info" for="bittrex-info-content">Minimum confirmation</label>
+                <span id="bittrex-info-content">{{currency.MinConfirmation}}</span>
+            </div>
+            <div class="bittrex-info">
+                <label class="label label-info" for="bittrex-info-content">Tx fee</label>
+                <span id="bittrex-info-content">{{currency.TxFee}}</span>
+            </div>
+            <div class="bittrex-info">
+                <label class="label label-info" for="bittrex-info-content">Coin is active</label>
+                <span id="bittrex-info-content">{{currency.IsActive}}</span>
+            </div>
+            <div class="bittrex-info">
+                <label class="label label-info" for="bittrex-info-content">Coin type</label>
+                <span id="bittrex-info-content">{{currency.CoinType}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.BaseAddress">
+                <label class="label label-info" for="bittrex-info-content">Base address</label>
+                <span id="bittrex-info-content">{{currency.BaseAddress}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.Notice">
+                <label class="label label-info" for="bittrex-info-content">Notices</label>
+                <span id="bittrex-info-content">{{currency.Notice}}</span>
+            </div>
+        </div>
+    </div>
+</div>

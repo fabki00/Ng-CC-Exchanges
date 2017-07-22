@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { ExchangesComponent } from './exchanges.component';
 import { TestMarketsNamesComponent } from './test-markets-names/test-markets-names.component';
 import { TestMarketNameComponent } from './test-market-name/test-market-name.component';
+import { TestBittrexCurrenciesComponent } from './test-bittrex-currencies/test-bittrex-currencies.component';
 
 @NgModule({
   imports: [
@@ -44,7 +45,8 @@ import { TestMarketNameComponent } from './test-market-name/test-market-name.com
     SlashToDashPipe,
     SearchMarketPipe
 ,
-    TestMarketNameComponent
+    TestMarketNameComponent,
+    TestBittrexCurrenciesComponent
 ],
   exports: [ExchangesComponent],
   bootstrap: [ExchangesComponent]
