@@ -27,6 +27,16 @@ getMarketsNames(): Observable<string[]> {
         return marketsNames;
     }).timeout(this._timeOut);
 }
+getMarketsNamesFormatted(): Observable<string[]> {
+  return this.getMarketsNames()
+              .map(response => {
+                const newMarketsNames = [];
+                response.forEach(el => {
+                 newMarketsNames.push(el.replace('_', '-'));
+                });
+                return newMarketsNames;
+              });
+}
  getTicker(): Observable<PoloniexTicker[]> {
     return this.getReturnTicker()
         .map(response => {

@@ -1,3 +1,4 @@
+import { SearchMarketPipe } from './../../pipes/search-market.pipe';
 import { NovaExchangeService } from './../../services/nova-exchange/nova-exchange.service';
 import { ExmoService } from './../../services/exmo/exmo.service';
 import { CCexService } from './../../services/c-cex/c-cex.service';
@@ -40,7 +41,9 @@ import { TestMarketNameComponent } from './test-market-name/test-market-name.com
     TestMarketsNamesComponent,
     UnderscoreToDashPipe,
     InvertPairKeyPipe,
-    SlashToDashPipe,
+    SlashToDashPipe,
+    SearchMarketPipe
+,
     TestMarketNameComponent
 ],
   exports: [ExchangesComponent],

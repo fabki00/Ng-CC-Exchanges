@@ -79,7 +79,7 @@ export class TestMarketsNamesComponent implements OnInit {
     );
   }
   getExmoMarketsNames() {
-    this._exmoService.getMarketsNames().subscribe(
+    this._exmoService.getMarketsNamesFormatted().subscribe(
       data => this._exmoMarketsNames = data,
       error => {
          this.handleError(error);
@@ -105,7 +105,7 @@ export class TestMarketsNamesComponent implements OnInit {
     );
   }
 getCryptopiaMarketsNames() {
-    this._cryptopiaService.getMarketsNames().subscribe(
+    this._cryptopiaService.getMarketsNamesFormatted().subscribe(
       data => this._cryptopiaMarketsNames = data,
       error => {
          this.handleError(error);
@@ -144,7 +144,7 @@ getCryptopiaMarketsNames() {
     );
   }
   getPoloniexMarketsNames() {
-    this._poloniexService.getMarketsNames().subscribe(
+    this._poloniexService.getMarketsNamesFormatted().subscribe(
       data => this._poloniexMarketsNames = data,
       error => {
          this.handleError(error);

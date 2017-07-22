@@ -1,8 +1,9 @@
 <div class="scrollbar-container">
     <div *ngIf="_marketNames.length > 1" class="scrollbar-container-child">
         <label class="label label-success">{{_marketNames.length}} markets listed</label>
+        <input type="text" name="filter" id="market-filter" placeholder="search engine" [(ngModel)]="filter">
         <div class="scroll-bar">
-            <div *ngFor="let market of _marketNames" class="market-list-item">
+            <div *ngFor="let market of _marketNames | searchMarket:filter" class="market-list-item">
                 <div>
                     <span *ngIf="pipesOptions.uppercase === _pipesOptions">
                   {{ market | uppercase}}

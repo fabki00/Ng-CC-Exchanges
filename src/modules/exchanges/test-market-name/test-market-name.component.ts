@@ -14,6 +14,7 @@ export class TestMarketNameComponent implements OnInit {
    @Input()
   _pipesOptions = '';
 
+  filter = '';
   pipesOptions: TestMarketsPipeOptions;
   constructor() { }
 
