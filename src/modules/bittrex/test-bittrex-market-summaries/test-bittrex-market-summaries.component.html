@@ -1,8 +1,8 @@
 <div class="bittrex-currencies-container">
-    <div class="bittrex-currencies-title">
-        <h3 class="bittrex-currencies-title"><strong> Bittrex markets summary</strong></h3>
-    </div>
     <div class="scroll-bar bittrex-currencies-sub-container" *ngIf="_currencies.length > 0">
+        <div class="bittrex-currencies-title">
+            <h3 class="bittrex-currencies-title"><strong> Bittrex markets summary</strong></h3>
+        </div>
         <div class="bittrex-currencies" *ngFor="let currency of _currencies">
             <h3><label class="label label-default">{{currency.MarketName}}</label></h3>
             <div class="bittrex-info" *ngIf="currency.High">

@@ -1,3 +1,6 @@
+import { SearchMarketNamePipe } from './../../pipes/search-market-name.pipe';
+import { SearchCurrenciesPipe } from './../../pipes/search-currencies.pipe';
+import { FormsModule } from '@angular/forms';
 import { TestMarketNameComponent } from './../test-shared/test-market-name/test-market-name.component';
 import { TestSharedModule } from './../test-shared/test-shared.module';
 import { SearchMarketPipe } from './../../pipes/search-market.pipe';
@@ -11,13 +14,15 @@ import { TestBittrexMarketsComponent } from './test-bittrex-markets/test-bittrex
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     TestSharedModule
   ],
   declarations: [
     BittrexComponent,
     TestBittrexCurrenciesComponent,
     TestBittrexMarketSummariesComponent,
-    TestBittrexMarketsComponent
+    TestBittrexMarketsComponent,
+    SearchCurrenciesPipe
 ]
 })
 export class BittrexModule { }

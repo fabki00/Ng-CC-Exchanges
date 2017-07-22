@@ -1,3 +1,4 @@
+import { SearchMarketNamePipe } from './../../pipes/search-market-name.pipe';
 import { FormsModule } from '@angular/forms';
 import { SearchMarketPipe } from './../../pipes/search-market.pipe';
 import { TestMarketNameComponent } from './test-market-name/test-market-name.component';
@@ -15,7 +16,7 @@ import { TestSharedComponent } from './test-shared.component';
     TestSharedComponent,
     TestMarketsNamesComponent,
     TestMarketNameComponent,
-    SearchMarketPipe
+    SearchMarketNamePipe
   ],
   exports: [
     TestMarketNameComponent
