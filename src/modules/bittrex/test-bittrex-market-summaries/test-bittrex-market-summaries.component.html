@@ -1,0 +1,58 @@
+<div class="bittrex-currencies-container">
+    <div class="bittrex-currencies-title">
+        <h3 class="bittrex-currencies-title"><strong> Bittrex summary currencies</strong></h3>
+    </div>
+    <div class="scroll-bar bittrex-currencies-sub-container" *ngIf="_currencies.length > 0">
+        <div class="bittrex-currencies" *ngFor="let currency of _currencies">
+            <h3><label class="label label-default">{{currency.MarketName}}</label></h3>
+            <div class="bittrex-info" *ngIf="currency.High">
+                <label class="label label-info" for="bittrex-info-content">High</label>
+                <span id="bittrex-info-content">{{currency.High}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.Low">
+                <label class="label label-info" for="bittrex-info-content">Low</label>
+                <span id="bittrex-info-content">{{currency.Low}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.Volume">
+                <label class="label label-info" for="bittrex-info-content">Volume</label>
+                <span id="bittrex-info-content">{{currency.Volume}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.Last">
+                <label class="label label-info" for="bittrex-info-content">Last</label>
+                <span id="bittrex-info-content">{{currency.Last}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.BaseVolume">
+                <label class="label label-info" for="bittrex-info-content">Base Volume</label>
+                <span id="bittrex-info-content">{{currency.BaseVolume}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.TimeStamp">
+                <label class="label label-info" for="bittrex-info-content">TimeStamp</label>
+                <span id="bittrex-info-content">{{currency.TimeStamp}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.Bid">
+                <label class="label label-info" for="bittrex-info-content">Bid</label>
+                <span id="bittrex-info-content">{{currency.Bid}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.Ask">
+                <label class="label label-info" for="bittrex-info-content">Ask</label>
+                <span id="bittrex-info-content">{{currency.Ask}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.OpenBuyOrders">
+                <label class="label label-info" for="bittrex-info-content">Open buy orders</label>
+                <span id="bittrex-info-content">{{currency.OpenBuyOrders}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.OpenSellOrders">
+                <label class="label label-info" for="bittrex-info-content">Open sell orders</label>
+                <span id="bittrex-info-content">{{currency.OpenSellOrders}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.PrevDay">
+                <label class="label label-info" for="bittrex-info-content">Previous day</label>
+                <span id="bittrex-info-content">{{currency.PrevDay}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.Created">
+                <label class="label label-info" for="bittrex-info-content">Created</label>
+                <span id="bittrex-info-content">{{currency.Created}}</span>
+            </div>
+        </div>
+    </div>
+</div>

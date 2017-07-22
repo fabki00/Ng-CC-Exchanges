@@ -5,12 +5,17 @@ import { TestBittrexCurrenciesComponent } from './test-bittrex-currencies/test-b
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BittrexComponent } from './bittrex.component';
+import { TestBittrexMarketSummariesComponent } from './test-bittrex-market-summaries/test-bittrex-market-summaries.component';
 
 @NgModule({
   imports: [
     CommonModule,
     TestSharedModule
   ],
-  declarations: [BittrexComponent, TestBittrexCurrenciesComponent]
+  declarations: [
+    BittrexComponent,
+    TestBittrexCurrenciesComponent,
+    TestBittrexMarketSummariesComponent
+]
 })
 export class BittrexModule { }
