@@ -1,5 +1,5 @@
-import { BittrexCurrencies, BittrexCurrency } from './../../../../models/bittrex/bittrex-currencies';
-import { BittrexService } from './../../../../services/bittrex/bittrex.service';
+import { BittrexCurrencies, BittrexCurrency } from './../../../models/bittrex/bittrex-currencies';
+import { BittrexService } from './../../../services/bittrex/bittrex.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

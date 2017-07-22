@@ -1,4 +1,4 @@
-import { BittrexService } from './../../../services/bittrex/bittrex.service';
+import { BittrexService } from './../../services/bittrex/bittrex.service';
 import { Component, OnInit, ApplicationRef } from '@angular/core';
 
 @Component({

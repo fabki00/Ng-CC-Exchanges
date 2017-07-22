@@ -1,14 +1,14 @@
-import { NovaExchangeService } from './../../../../services/nova-exchange/nova-exchange.service';
-import { ExmoService } from './../../../../services/exmo/exmo.service';
-import { CCexService } from './../../../../services/c-cex/c-cex.service';
-import { CryptopiaService } from './../../../../services/cryptopia/cryptopia.service';
-import { HitbtcService } from './../../../../services/hitbtc/hitbtc.service';
-import { YobitService } from './../../../../services/yobit/yobit.service';
+import { NovaExchangeService } from './../../../services/nova-exchange/nova-exchange.service';
+import { ExmoService } from './../../../services/exmo/exmo.service';
+import { CCexService } from './../../../services/c-cex/c-cex.service';
+import { CryptopiaService } from './../../../services/cryptopia/cryptopia.service';
+import { HitbtcService } from './../../../services/hitbtc/hitbtc.service';
+import { YobitService } from './../../../services/yobit/yobit.service';
 import { Component, OnInit, ApplicationRef } from '@angular/core';
 
-import { PoloniexService } from './../../../../services/poloniex/poloniex.service';
-import { BittrexService } from './../../../../services/bittrex/bittrex.service';
-import { TestMarketsPipeOptions } from './../../../../models/shared/test-markets-pipe-options';
+import { PoloniexService } from './../../../services/poloniex/poloniex.service';
+import { BittrexService } from './../../../services/bittrex/bittrex.service';
+import { TestMarketsPipeOptions } from './../../../models/shared/test-markets-pipe-options';
 @Component({
   selector: 'app-test-markets-names',
   templateUrl: './test-markets-names.component.html',
