@@ -21,4 +21,16 @@ getMarketsNames(): Observable<string[]> {
         return marketsNames;
         }).timeout(this._timeOut);
     }
+getMarketsNamesFormatted(): Observable<string[]> {
+  return this.getMarketsNames()
+              .map(response => {
+                const newMarketsNames = [];
+                response.forEach(el => {
+                const split = el.toLocaleUpperCase().split('_');
+                const newKey = split[1] + '-' + split[0];
+                 newMarketsNames.push(newKey);
+                });
+                return newMarketsNames;
+              });
+    }
 }

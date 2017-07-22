@@ -1,31 +1,11 @@
 <div class="scrollbar-container">
-    <div *ngIf="_marketNames.length > 1" class="scrollbar-container-child">
+    <div *ngIf="_marketNames.length > 1" class="form-group scrollbar-container-child">
         <label class="label label-success">{{_marketNames.length}} markets listed</label>
-        <input type="text" name="filter" id="market-filter" placeholder="search engine" [(ngModel)]="filter">
+        <input type="text" class="search-input" name="filter" id="market-filter" placeholder="search engine" [(ngModel)]="filter">
         <div class="scroll-bar">
             <div *ngFor="let market of _marketNames | searchMarket:filter" class="market-list-item">
                 <div>
-                    <span *ngIf="pipesOptions.uppercase === _pipesOptions">
-                  {{ market | uppercase}}
-                </span>
-                    <span *ngIf="pipesOptions.invertPairKey === _pipesOptions">
-                  {{ market | invertPairKey}}
-                </span>
-                    <span *ngIf="pipesOptions.slashToDash === _pipesOptions">
-                  {{ market | slashToDash}}
-                </span>
-                    <span *ngIf="pipesOptions.underscoreToDash === _pipesOptions">
-                  {{ market | underscoreToDash}}
-                </span>
-                    <span *ngIf="pipesOptions.underscoreToDashToUppercase === _pipesOptions">
-                  {{ market |underscoreToDash |uppercase}}
-                </span>
-                    <span *ngIf="pipesOptions.all === _pipesOptions">
-                  {{ market  |underscoreToDash |uppercase|invertPairKey}}
-                </span>
-                    <span *ngIf="!_pipesOptions">
-                  {{ market }}
-                </span>
+                    {{ market }}
                 </div>
             </div>
         </div>

@@ -65,7 +65,7 @@ export class TestMarketsNamesComponent implements OnInit {
     this.getNovaExchangeMarketsNames();
   }
   getNovaExchangeMarketsNames() {
-    this._novaExchangeService.getMarketsNames()
+    this._novaExchangeService.getMarketsNamesFormatted()
     .subscribe(
       data => this._novaExchangeMarketsNames = data,
       error => {
@@ -131,7 +131,7 @@ getCryptopiaMarketsNames() {
     );
   }
   getYobitMarketsNames() {
-    this._yobitService.getMarketsNames().subscribe(
+    this._yobitService.getMarketsNamesFormatted().subscribe(
       data => this._yobitMarketsNames = data,
       error => {
          this.handleError(error);
