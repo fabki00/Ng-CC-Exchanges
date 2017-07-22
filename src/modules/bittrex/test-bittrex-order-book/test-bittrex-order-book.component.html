@@ -1,0 +1,45 @@
+<div class="bittrex-currencies-container">
+    <div class="bittrex-currencies-sub-container">
+        <div class="bittrex-currencies-title">
+            <h3 class="bittrex-currencies-title"><strong> Bittrex order book</strong></h3>
+        </div>
+        <form #form="ngForm" name="form" (ngSubmit)="xx()">
+            <input type="text" class="search-input" placeholder="search engine" [(ngModel)]="filter" name="ngModel">
+            <button type="submit">submit</button>
+        </form>
+        <div class="scroll-bar" *ngIf="_tempCurrencyBuy">
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="label label-default" for="bittrex-info-content">Buy orders</label>
+                    <div class="bittrex-currencies" *ngFor="let currency of _tempCurrencyBuy">
+                        <div class="bittrex-info" *ngIf="currency.Quantity">
+                            <label class="label label-info" for="bittrex-info-content">Quantity</label>
+                            <span id="bittrex-info-content">{{currency.Quantity}}</span>
+                        </div>
+                        <div class="bittrex-info" *ngIf="currency.Rate">
+                            <label class="label label-info" for="bittrex-info-content">Rate</label>
+                            <span id="bittrex-info-content">{{currency.Rate}}</span>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="label label-default" for="bittrex-info-content">Sell orders</label>
+                    <div class="bittrex-currencies" *ngFor="let currency of _tempCurrencySell">
+                        <div class="bittrex-info" *ngIf="currency.Quantity">
+                            <label class="label label-info" for="bittrex-info-content">Quantity</label>
+                            <span id="bittrex-info-content">{{currency.Quantity}}</span>
+                        </div>
+                        <div class="bittrex-info" *ngIf="currency.Rate">
+                            <label class="label label-info" for="bittrex-info-content">Rate</label>
+                            <span id="bittrex-info-content">{{currency.Rate}}</span>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

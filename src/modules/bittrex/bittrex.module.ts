@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { BittrexComponent } from './bittrex.component';
 import { TestBittrexMarketSummariesComponent } from './test-bittrex-market-summaries/test-bittrex-market-summaries.component';
 import { TestBittrexMarketsComponent } from './test-bittrex-markets/test-bittrex-markets.component';
+import { TestBittrexOrderBookComponent } from './test-bittrex-order-book/test-bittrex-order-book.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { TestBittrexMarketsComponent } from './test-bittrex-markets/test-bittrex
     TestBittrexMarketSummariesComponent,
     TestBittrexMarketsComponent,
     SearchCurrenciesPipe,
-    SearchMarketSummariesPipe
+    SearchMarketSummariesPipe,
+    TestBittrexOrderBookComponent
 ]
 })
 export class BittrexModule { }
