@@ -1,7 +1,12 @@
+<div class="currencies-title">
+    <h3 class="currencies-title"><strong> {{_exchangeName}} markets name</strong></h3>
+</div>
 <div class="scrollbar-container">
-    <div *ngIf="_marketNames.length > 0" class="form-group scrollbar-container-child">
+    <div *ngIf="_marketNames.length > 0" class="scrollbar-container-child">
         <label class="label label-success">{{_marketNames.length}} markets listed</label>
+        <br>
         <input type="text" class="search-input" name="filter" id="market-filter" placeholder="search engine" [(ngModel)]="filter">
+        <br>
         <div class="scroll-bar">
             <div *ngFor="let market of _marketNames | searchMarket:filter" class="market-list-item">
                 <div>

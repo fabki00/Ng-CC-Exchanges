@@ -1,3 +1,5 @@
+import { BittrexModule } from './bittrex/bittrex.module';
+import { routes } from './exchanges.router';
 import { SearchMarketPipe } from './../../pipes/search-market.pipe';
 import { NovaExchangeService } from './../../services/nova-exchange/nova-exchange.service';
 import { ExmoService } from './../../services/exmo/exmo.service';
@@ -18,14 +20,17 @@ import { CommonModule } from '@angular/common';
 import { ExchangesComponent } from './exchanges.component';
 import { TestMarketsNamesComponent } from './test-markets-names/test-markets-names.component';
 import { TestMarketNameComponent } from './test-market-name/test-market-name.component';
-import { TestBittrexCurrenciesComponent } from './test-bittrex-currencies/test-bittrex-currencies.component';
-
+import { HomeComponent } from './home/home.component';
+import { BittrexComponent } from './bittrex/bittrex.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     HttpModule,
+    RouterModule.forRoot(routes),
+    BittrexModule
   ],
   providers: [
     BittrexService,
@@ -39,16 +44,14 @@ import { TestBittrexCurrenciesComponent } from './test-bittrex-currencies/test-b
   ],
   declarations: [
     ExchangesComponent,
-    TestMarketsNamesComponent,
     UnderscoreToDashPipe,
     InvertPairKeyPipe,
     SlashToDashPipe,
-    SearchMarketPipe
-,
-    TestMarketNameComponent,
-    TestBittrexCurrenciesComponent
+    HomeComponent
 ],
-  exports: [ExchangesComponent],
+  exports: [
+    ExchangesComponent
+],
   bootstrap: [ExchangesComponent]
 })
 export class ExchangesModule { }
