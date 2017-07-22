@@ -1,4 +1,4 @@
-.scroll-bar.bittrex-currencies-sub-container {
+.bittrex-currencies-sub-container {
     background-color: whitesmoke;
     border-radius: 4px;
     margin: 5%;
@@ -9,7 +9,7 @@
     color: grey;
 }
 
-.scroll-bar.bittrex-currencies {
+.bittrex-currencies {
     color: black;
     border-radius: 4px;
     margin: 5%;
@@ -17,7 +17,10 @@
 
 .scroll-bar {
     overflow-y: scroll;
-    height: 361px;
+    height: 320px;
+    color: black;
+    border-radius: 4px;
+    margin: 5%;
 }
 
  ::-webkit-scrollbar {

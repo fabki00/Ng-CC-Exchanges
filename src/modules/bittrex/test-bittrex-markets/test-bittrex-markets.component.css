@@ -1,7 +1,6 @@
-.scroll-bar.bittrex-currencies-sub-container {
+.bittrex-currencies-sub-container {
     background-color: whitesmoke;
     border-radius: 4px;
-    margin: 5%;
 }
 
 .bittrex-currencies-title {
@@ -9,15 +8,12 @@
     color: grey;
 }
 
-.scroll-bar.bittrex-currencies {
+.scroll-bar {
+    overflow-y: scroll;
+    height: 300px;
     color: black;
     border-radius: 4px;
     margin: 5%;
-}
-
-.scroll-bar {
-    overflow-y: scroll;
-    height: 361px;
 }
 
 img {
