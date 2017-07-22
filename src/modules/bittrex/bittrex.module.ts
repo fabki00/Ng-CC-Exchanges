@@ -1,4 +1,4 @@
-import { SearchMarketSummariesPipe } from './../../pipes/search-pipes/search-market-summaries.pipe';
+import { SearchMarketSummariesPipe } from './../../pipes/search-pipes/search-market.pipe';
 import { SearchMarketNamePipe } from './../../pipes/search-pipes/search-market-name.pipe';
 import { SearchCurrenciesPipe } from './../../pipes/search-pipes/search-currencies.pipe';
 import { FormsModule } from '@angular/forms';

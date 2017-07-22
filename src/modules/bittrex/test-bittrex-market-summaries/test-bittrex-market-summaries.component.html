@@ -7,7 +7,7 @@
             <input type="text" placeholder="search engine" [(ngModel)]="filter">
         </div>
         <div class="scroll-bar">
-            <div class="bittrex-currencies" *ngFor="let currency of _currencies | searchMarketSummaries:filter">
+            <div class="bittrex-currencies" *ngFor="let currency of _currencies | searchMarket:filter">
                 <h3><label class="label label-default">{{currency.MarketName}}</label></h3>
                 <div class="bittrex-info" *ngIf="currency.High">
                     <label class="label label-info" for="bittrex-info-content">High</label>

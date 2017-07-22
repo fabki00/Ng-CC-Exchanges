@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'searchMarketSummaries'
+  name: 'searchMarket'
 })
 export class SearchMarketSummariesPipe implements PipeTransform {
 
