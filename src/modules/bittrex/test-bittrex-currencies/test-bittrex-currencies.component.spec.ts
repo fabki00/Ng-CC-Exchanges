@@ -1,3 +1,5 @@
+import { BittrexService } from './../../../services/bittrex/bittrex.service';
+import { HttpModule } from '@angular/http';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -11,7 +13,9 @@ describe('TestBittrexCurrenciesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TestBittrexCurrenciesComponent ]
+      imports: [HttpModule],
+      declarations: [ TestBittrexCurrenciesComponent ],
+      providers: [BittrexService]
     })
     .compileComponents();
   }));

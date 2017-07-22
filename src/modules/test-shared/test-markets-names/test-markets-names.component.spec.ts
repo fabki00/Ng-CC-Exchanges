@@ -1,3 +1,5 @@
+import { SearchMarketPipe } from './../../../pipes/search-market.pipe';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NovaExchangeService } from './../../../services/nova-exchange/nova-exchange.service';
 import { ExmoService } from './../../../services/exmo/exmo.service';
@@ -37,12 +39,11 @@ describe('TestMarketsNamesComponent', () => {
       declarations: [
         TestMarketsNamesComponent,
         TestMarketNameComponent,
-        InvertPairKeyPipe,
-        SlashToDashPipe,
-        UnderscoreToDashPipe
+        SearchMarketPipe
       ],
       imports: [
-        HttpModule
+        HttpModule,
+        FormsModule
       ]
     })
     .compileComponents();
