@@ -1,0 +1,47 @@
+<div class="bittrex-currencies-container">
+    <div class="bittrex-currencies-title">
+        <h3 class="bittrex-currencies-title"><strong> Bittrex markets</strong></h3>
+    </div>
+    <div class="scroll-bar bittrex-currencies-sub-container" *ngIf="_currencies.length > 0">
+        <div class="bittrex-currencies" *ngFor="let currency of _currencies">
+            <h3><label class="label label-default">{{currency.MarketName}} </label></h3>
+            <div class="bittrex-info" *ngIf="currency.LogoUrl">
+                <label class="label label-info" for="bittrex-info-content">Logo</label>
+                <img src="{{currency.LogoUrl}}" alt="">
+            </div>
+            <div class="bittrex-info" *ngIf="currency.BaseCurrency">
+                <label class="label label-info" for="bittrex-info-content">BaseCurrency</label>
+                <span id="bittrex-info-content">{{currency.BaseCurrency}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.MarketCurrencyLong">
+                <label class="label label-info" for="bittrex-info-content">MarketCurrencyLong</label>
+                <span id="bittrex-info-content">{{currency.MarketCurrencyLong}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.BaseCurrencyLong">
+                <label class="label label-info" for="bittrex-info-content">BaseCurrencyLong</label>
+                <span id="bittrex-info-content">{{currency.BaseCurrencyLong}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.MinTradeSize">
+                <label class="label label-info" for="bittrex-info-content">MinTradeSize</label>
+                <span id="bittrex-info-content">{{currency.MinTradeSize}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.MarketCurrency">
+                <label class="label label-info" for="bittrex-info-content">MarketCurrency</label>
+                <span id="bittrex-info-content">{{currency.MarketCurrency}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.IsActive">
+                <label class="label label-info" for="bittrex-info-content">IsActive</label>
+                <span id="bittrex-info-content">{{currency.IsActive}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.Notice">
+                <label class="label label-info" for="bittrex-info-content">Notice</label>
+                <span id="bittrex-info-content">{{currency.Notice}}</span>
+            </div>
+            <div class="bittrex-info" *ngIf="currency.IsSponsored">
+                <label class="label label-info" for="bittrex-info-content">IsSponsored</label>
+                <span id="bittrex-info-content">{{currency.IsSponsored}}</span>
+            </div>
+
+        </div>
+    </div>
+</div>

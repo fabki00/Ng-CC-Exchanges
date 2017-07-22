@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BittrexComponent } from './bittrex.component';
 import { TestBittrexMarketSummariesComponent } from './test-bittrex-market-summaries/test-bittrex-market-summaries.component';
+import { TestBittrexMarketsComponent } from './test-bittrex-markets/test-bittrex-markets.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { TestBittrexMarketSummariesComponent } from './test-bittrex-market-summa
   declarations: [
     BittrexComponent,
     TestBittrexCurrenciesComponent,
-    TestBittrexMarketSummariesComponent
+    TestBittrexMarketSummariesComponent,
+    TestBittrexMarketsComponent
 ]
 })
 export class BittrexModule { }
