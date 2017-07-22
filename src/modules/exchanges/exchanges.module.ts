@@ -1,6 +1,5 @@
 import { BittrexModule } from '../bittrex/bittrex.module';
 import { routes } from './exchanges.router';
-import { SearchMarketPipe } from './../../pipes/search-market.pipe';
 import { NovaExchangeService } from './../../services/nova-exchange/nova-exchange.service';
 import { ExmoService } from './../../services/exmo/exmo.service';
 import { CCexService } from './../../services/c-cex/c-cex.service';

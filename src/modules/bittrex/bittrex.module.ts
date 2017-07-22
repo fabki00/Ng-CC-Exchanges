@@ -1,9 +1,9 @@
-import { SearchMarketNamePipe } from './../../pipes/search-market-name.pipe';
-import { SearchCurrenciesPipe } from './../../pipes/search-currencies.pipe';
+import { SearchMarketSummariesPipe } from './../../pipes/search-pipes/search-market-summaries.pipe';
+import { SearchMarketNamePipe } from './../../pipes/search-pipes/search-market-name.pipe';
+import { SearchCurrenciesPipe } from './../../pipes/search-pipes/search-currencies.pipe';
 import { FormsModule } from '@angular/forms';
 import { TestMarketNameComponent } from './../test-shared/test-market-name/test-market-name.component';
 import { TestSharedModule } from './../test-shared/test-shared.module';
-import { SearchMarketPipe } from './../../pipes/search-market.pipe';
 import { TestBittrexCurrenciesComponent } from './test-bittrex-currencies/test-bittrex-currencies.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -22,7 +22,8 @@ import { TestBittrexMarketsComponent } from './test-bittrex-markets/test-bittrex
     TestBittrexCurrenciesComponent,
     TestBittrexMarketSummariesComponent,
     TestBittrexMarketsComponent,
-    SearchCurrenciesPipe
+    SearchCurrenciesPipe,
+    SearchMarketSummariesPipe
 ]
 })
 export class BittrexModule { }

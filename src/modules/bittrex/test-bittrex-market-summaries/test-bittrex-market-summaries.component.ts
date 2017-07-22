@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestBittrexMarketSummariesComponent implements OnInit {
   _currencies: BittrexMarketSummary[] = [];
+  filter = '';
   constructor(private _bittrexService: BittrexService) { }
 
   ngOnInit() {

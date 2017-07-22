@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { SearchMarketPipe } from './search-market.pipe';
+import { SearchMarketSummariesPipe } from './search-market-summaries.pipe';
 
-describe('Pipe: SearchMarkete', () => {
+describe('Pipe: SearchMarketSummariese', () => {
   it('create an instance', () => {
-    let pipe = new SearchMarketPipe();
+    let pipe = new SearchMarketSummariesPipe();
     expect(pipe).toBeTruthy();
   });
 });

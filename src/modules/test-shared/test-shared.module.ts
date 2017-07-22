@@ -1,6 +1,5 @@
-import { SearchMarketNamePipe } from './../../pipes/search-market-name.pipe';
+import { SearchMarketNamePipe } from './../../pipes/search-pipes/search-market-name.pipe';
 import { FormsModule } from '@angular/forms';
-import { SearchMarketPipe } from './../../pipes/search-market.pipe';
 import { TestMarketNameComponent } from './test-market-name/test-market-name.component';
 import { TestMarketsNamesComponent } from './test-markets-names/test-markets-names.component';
 import { NgModule } from '@angular/core';
