@@ -1,0 +1,34 @@
+<div class="bittrex-currencies-container">
+    <div class="bittrex-currencies-sub-container">
+        <div class="bittrex-currencies-title">
+            <h3 class="bittrex-currencies-title"><strong>Bittrex ticker</strong></h3>
+        </div>
+        <form #form="ngForm" name="form" (ngSubmit)="submit()">
+            <input type="text" class="search-input" placeholder="search engine" [(ngModel)]="filter" name="ngModel">
+            <button type="submit" class="btn">submit</button>
+        </form>
+        <div class="scroll-bar">
+            <div class="row" *ngIf="_tempTicker">
+                <div class="bittrex-currencies-title" *ngIf="_tempTicker">
+                    <h4 class="bittrex-currencies-title"><strong> {{_tempTicker.marketName}}</strong></h4>
+                </div>
+                <div class="col-md-12">
+                    <div>
+                        <label class="label label-info">Bid</label>
+                        <span>{{_tempTicker.ticker.Bid}}</span>
+                    </div>
+                    <div>
+                        <label class="label label-info">Ask</label>
+                        <span>{{_tempTicker.ticker.Ask}}</span>
+                    </div>
+                    <div>
+                        <label class="label label-info">Last</label>
+                        <span>{{_tempTicker.ticker.Last}}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -8,30 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test-bittrex-order-book.component.css']
 })
 export class TestBittrexOrderBookComponent implements OnInit {
-  _currencies: BittrexOrder[] = [];
   _tempCurrencyBuy: BittrexOrder[] = [];
-   _tempCurrencySell: BittrexOrder[] = [];
+  _tempCurrencySell: BittrexOrder[] = [];
   _marketNames: string[] = [];
   filter = '';
   constructor(private _bittrexService: BittrexService) { }
   ngOnInit() {
     this.getBittrexMarketNames();
   }
-
-inputkeyChange() {
-   this.getBittrexOrderBook(this.filter);
-}
-xx() {
+submit() {
+  if (this._marketNames.length > 0 && this.filter !== '') {
   const currencies: BittrexOrder[] = [];
   let counter = -1;
     do {
       counter++;
-      if (this._marketNames[counter].indexOf(this.filter) > -1) {
+      if (this._marketNames[counter].indexOf(this.filter.toUpperCase()) > -1) {
         this.getBittrexBuyOrderBook(this._marketNames[counter]);
         this.getBittrexSellOrderBook(this._marketNames[counter]);
         counter = -1;
       }
-    }while (counter !== -1);
+    }while (counter !== -1 || counter === this._marketNames.length);
+  }
 }
 getBittrexMarketNames() {
     this._bittrexService.getMarketsNames().subscribe(

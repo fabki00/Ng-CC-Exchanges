@@ -3,12 +3,12 @@
         <div class="bittrex-currencies-title">
             <h3 class="bittrex-currencies-title"><strong> Bittrex order book</strong></h3>
         </div>
-        <form #form="ngForm" name="form" (ngSubmit)="xx()">
+        <form #form="ngForm" name="form" (ngSubmit)="submit()">
             <input type="text" class="search-input" placeholder="search engine" [(ngModel)]="filter" name="ngModel">
-            <button type="submit">submit</button>
+            <button type="submit" class="btn">submit</button>
         </form>
-        <div class="scroll-bar" *ngIf="_tempCurrencyBuy">
-            <div class="row">
+        <div class="scroll-bar">
+            <div class="row" *ngIf="_tempCurrencyBuy.length > 0">
                 <div class="col-md-6">
                     <label class="label label-default" for="bittrex-info-content">Buy orders</label>
                     <div class="bittrex-currencies" *ngFor="let currency of _tempCurrencyBuy">

@@ -11,6 +11,7 @@ import { BittrexComponent } from './bittrex.component';
 import { TestBittrexMarketSummariesComponent } from './test-bittrex-market-summaries/test-bittrex-market-summaries.component';
 import { TestBittrexMarketsComponent } from './test-bittrex-markets/test-bittrex-markets.component';
 import { TestBittrexOrderBookComponent } from './test-bittrex-order-book/test-bittrex-order-book.component';
+import { TestBittrexTickerComponent } from './test-bittrex-ticker/test-bittrex-ticker.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { TestBittrexOrderBookComponent } from './test-bittrex-order-book/test-bi
     TestBittrexMarketsComponent,
     SearchCurrenciesPipe,
     SearchMarketSummariesPipe,
-    TestBittrexOrderBookComponent
+    TestBittrexOrderBookComponent,
+    TestBittrexTickerComponent
 ]
 })
 export class BittrexModule { }
