@@ -1,4 +1,3 @@
-import { SearchMarketPipe } from './../../../pipes/search-market.pipe';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NovaExchangeService } from './../../../services/nova-exchange/nova-exchange.service';
@@ -19,6 +18,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TestMarketsNamesComponent } from './test-markets-names.component';
+import { SearchMarketNamePipe } from '../../../pipes/search-pipes/search-market-name.pipe';
 
 describe('TestMarketsNamesComponent', () => {
   let component: TestMarketsNamesComponent;
@@ -39,7 +39,7 @@ describe('TestMarketsNamesComponent', () => {
       declarations: [
         TestMarketsNamesComponent,
         TestMarketNameComponent,
-        SearchMarketPipe
+        SearchMarketNamePipe
       ],
       imports: [
         HttpModule,

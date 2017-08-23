@@ -1,4 +1,5 @@
-import { SearchMarketPipe } from './../../../pipes/search-market.pipe';
+import { SearchMarketNamePipe } from '../../../pipes/search-pipes/search-market-name.pipe';
+
 import { FormsModule } from '@angular/forms';
 import { UnderscoreToDashPipe } from './../../../pipes/underscore-to-dash.pipe';
 import { SlashToDashPipe } from './../../../pipes/slash-to-dash.pipe';
@@ -18,7 +19,7 @@ describe('TestMarketNameComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ TestMarketNameComponent,
         TestMarketsNamesComponent,
-        SearchMarketPipe ],
+        SearchMarketNamePipe],
       imports: [
         FormsModule
       ]
