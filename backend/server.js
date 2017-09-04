@@ -53,6 +53,13 @@ _api.get(_BITTREX_BASEURL + '/getticker', (request, response) => {
     httpGet(url, response);
     console.timeEnd("getticker");
 });
+_api.get(_BITTREX_BASEURL + '/getmarketsummary', (request, response) => {
+    console.time("getmarketsummary");
+    const market = request.query.market;
+    const url = `https://bittrex.com/api/v1.1/public/getmarketsummary?market=${market}`;
+    httpGet(url, response);
+    console.timeEnd("getmarketsummary");
+});
 /*-------------------------- Run ----------------------------- */
 _app.listen(_port, () => {
     console.time("start");

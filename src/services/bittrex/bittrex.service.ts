@@ -56,7 +56,7 @@ constructor(private _http: Http) {}
                     .timeout(this._timeOut);
     }
     getMarketSummary(market): Observable<BittrexMarketSummary>  {
-        return this._http.get(`https://bittrex.com/api/v1.1/public/getmarketsummary?market=${market}`)
+        return this._http.get(this._BASE_URL + `/getmarketsummary?market=${market}`)
                     .map(response => response.json().result[0] as BittrexMarketSummary)
                     .timeout(this._timeOut);
     }
