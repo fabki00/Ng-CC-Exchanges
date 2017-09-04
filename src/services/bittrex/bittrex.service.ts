@@ -15,24 +15,26 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class BittrexService {
 _timeOut = 120000;
+_BASE_URL = 'http://127.0.0.1:4201/api/bittrex';
+
 constructor(private _http: Http) {}
 /* OrderBook */
     getOrderBook(market, type= 'both', depth= 50) {
         if (type === 'buy' || 'sell') {
-             return this._http.get(`https://bittrex.com/api/v1.1/public/getorderbook?market=${market}&type=${type}&depth${depth}`)
+             return this._http.get(this._BASE_URL + `/getorderbook?market=${market}&type=${type}&depth${depth}`)
                 .map(response => response.json() as BittrexOrderBook)
                 .timeout(this._timeOut);
         }
     }
 /* Ticker */
     getTicker(market): Observable<BittrexResponseTicker> {
-        return this._http.get(`https://bittrex.com/api/v1.1/public/getticker?market=${market}`)
+        return this._http.get(this._BASE_URL + `/getticker?market=${market}`)
                     .map(response => response.json() as BittrexResponseTicker)
                     .timeout(this._timeOut);
     }
 /* Markets */
     getMarkets(): Observable<BittrexMarkets> {
-        return this._http.get('https://bittrex.com/api/v1.1/public/getmarkets')
+        return this._http.get(this._BASE_URL + '/getmarkets')
                     .map(response => response.json() as BittrexMarkets)
                     .timeout(this._timeOut);
     }
@@ -49,7 +51,7 @@ constructor(private _http: Http) {}
                    }).timeout(this._timeOut);
     }
     getMarketSummaries(): Observable<BittrexMarketSummaries>  {
-        return this._http.get('https://bittrex.com/api/v1.1/public/getmarketsummaries')
+        return this._http.get(this._BASE_URL + '/getmarketsummaries')
                     .map(response => response.json() as BittrexMarketSummaries)
                     .timeout(this._timeOut);
     }
@@ -60,7 +62,7 @@ constructor(private _http: Http) {}
     }
 /* Currency */
     getCurrencies(): Observable<BittrexCurrencies> {
-        return this._http.get('https://bittrex.com/api/v1.1/public/getcurrencies')
+        return this._http.get(this._BASE_URL + '/getcurrencies')
                     .map(response => response.json() as BittrexCurrencies)
                     .timeout(this._timeOut);
     }
