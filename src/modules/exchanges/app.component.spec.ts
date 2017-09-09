@@ -1,9 +1,10 @@
+import { routes } from './app.router';
+import { ExchangesComponent } from './app.component';
 import { BittrexModule } from '../bittrex/bittrex.module';
 import { TestSharedModule } from './../test-shared/test-shared.module';
 import { FormsModule } from '@angular/forms';
 import { BittrexComponent } from './../bittrex/bittrex.component';
 import { HomeComponent } from './home/home.component';
-import { routes } from './exchanges.router';
 import { RouterModule } from '@angular/router';
 import { NovaExchangeService } from './../../services/nova-exchange/nova-exchange.service';
 import { ExmoService } from './../../services/exmo/exmo.service';
@@ -17,7 +18,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
-import { ExchangesComponent } from './exchanges.component';
 import { RouterTestingModule } from '@angular/router/testing';
 describe('ExchangesComponent', () => {
   let component: ExchangesComponent;
