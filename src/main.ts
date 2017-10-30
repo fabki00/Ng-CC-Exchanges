@@ -1,4 +1,4 @@
-import { ExchangesModule } from './modules/exchanges/exchanges.module';
+import { AppModule } from './modules/exchanges/app.module';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -8,4 +8,4 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(ExchangesModule);
+platformBrowserDynamic().bootstrapModule(AppModule);
